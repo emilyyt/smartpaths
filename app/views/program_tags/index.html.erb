@@ -1,0 +1,25 @@
+<h1>Listing program_tags</h1>
+
+<table>
+  <tr>
+    <th>Program</th>
+    <th>Tag</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @program_tags.each do |program_tag| %>
+  <tr>
+    <td><%= program_tag.program_id %></td>
+    <td><%= program_tag.tag_id %></td>
+    <td><%= link_to 'Show', program_tag %></td>
+    <td><%= link_to 'Edit', edit_program_tag_path(program_tag) %></td>
+    <td><%= link_to 'Destroy', program_tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Program tag', new_program_tag_path %>

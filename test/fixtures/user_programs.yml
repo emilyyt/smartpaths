@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  graduating_year: 
+  program_id: 
+  user_id: 
+
+two:
+  graduating_year: 
+  program_id: 
+  user_id: 

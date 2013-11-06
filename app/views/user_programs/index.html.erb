@@ -1,0 +1,27 @@
+<h1>Listing user_programs</h1>
+
+<table>
+  <tr>
+    <th>Graduating year</th>
+    <th>Program</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @user_programs.each do |user_program| %>
+  <tr>
+    <td><%= user_program.graduating_year %></td>
+    <td><%= user_program.program_id %></td>
+    <td><%= user_program.user_id %></td>
+    <td><%= link_to 'Show', user_program %></td>
+    <td><%= link_to 'Edit', edit_user_program_path(user_program) %></td>
+    <td><%= link_to 'Destroy', user_program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User program', new_user_program_path %>

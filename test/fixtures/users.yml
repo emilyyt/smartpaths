@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  email: 
+  first_name: 
+  last_name: 
+  is_admin: 
+  password_digest: 
+
+two:
+  email: 
+  first_name: 
+  last_name: 
+  is_admin: 
+  password_digest: 

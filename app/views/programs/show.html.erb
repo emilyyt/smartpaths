@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @program.name %>
+</p>
+
+<p>
+  <b>Institution:</b>
+  <%= @program.institution_id %>
+</p>
+
+<p>
+  <b>Graduating salary:</b>
+  <%= @program.graduating_salary %>
+</p>
+
+
+<%= link_to 'Edit', edit_program_path(@program) %> |
+<%= link_to 'Back', programs_path %>
