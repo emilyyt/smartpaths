@@ -14,9 +14,9 @@
 ActiveRecord::Schema.define(:version => 20131106043712) do
 
   create_table "institutions", :force => true do |t|
+    t.string   "name"
     t.string   "address"
     t.string   "city"
-    t.string   "name"
     t.string   "state"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(:version => 20131106043712) do
   create_table "tags", :force => true do |t|
     t.string   "name"
     t.string   "type"
-    t.integer  "vote"
+    t.integer  "count"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

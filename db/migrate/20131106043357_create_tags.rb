@@ -3,7 +3,7 @@ class CreateTags < ActiveRecord::Migration
     create_table :tags do |t|
       t.string :name
       t.string :type
-      t.integer :vote
+      t.integer :count
 
       t.timestamps
     end

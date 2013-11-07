@@ -4,6 +4,8 @@ class Program < ActiveRecord::Base
   belongs_to :institution
   has_many :program_tags
   has_many :user_programs
-  has_many :review
+  has_many :reviews
   has_many :users, :through => :user_programs
+
+  validates_presence_of :institution
 end
