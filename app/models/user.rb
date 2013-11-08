@@ -1,7 +1,8 @@
 require 'bcrypt'
 class User < ActiveRecord::Base
   include BCrypt
-  attr_accessible :email, :first_name, :is_admin, :last_name, :password, :is_active, :password_hash, :password_salt
+  attr_accessor :password
+  attr_accessible :email, :first_name, :is_admin, :last_name, :password, :is_active, :password_confirmation
   
   #Relationships
   has_many :user_tags
@@ -25,13 +26,20 @@ class User < ActiveRecord::Base
   validates_presence_of :email
   validates_format_of :email, :with => /^[\w]([^@\s,;]+)@(([a-z0-9.-]+\.)+(com|edu|org|net|gov|mil|biz|info))$/i
 
-  def password
-    @password ||= Password.new(password_hash)
-  end
+ # def password
+ #   @password ||= Password.new(password_hash)
+ # end
 
-  def password=(new_password)
-    @password = Password.create(new_password)
-    self.password_hash = @password
+ # def password=(new_password)
+ #   @password = Password.create(new_password)
+ #   self.password_hash = @password
+ # end
+  
+  def encrypt_password
+    if password.present?
+      self.password_salt = BCrypt::Engine.generate_salt
+      self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
+    end
   end
 end
 
