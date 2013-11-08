@@ -1,5 +1,5 @@
 class Institution < ActiveRecord::Base
-  attr_accessible :name, :address, :city, :state
+  attr_accessible :name, :address, :city, :state, :zip
   #Relationship
   has_many :programs
 

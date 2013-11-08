@@ -5,6 +5,7 @@ class CreateInstitutions < ActiveRecord::Migration
       t.string :city
       t.string :name
       t.string :state
+      t.string :zip
 
       t.timestamps
     end

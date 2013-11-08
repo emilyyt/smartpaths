@@ -14,10 +14,11 @@
 ActiveRecord::Schema.define(:version => 20131106043712) do
 
   create_table "institutions", :force => true do |t|
-    t.string   "name"
     t.string   "address"
     t.string   "city"
+    t.string   "name"
     t.string   "state"
+    t.string   "zip"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -25,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20131106043712) do
   create_table "program_tags", :force => true do |t|
     t.integer  "program_id"
     t.integer  "tag_id"
+    t.integer  "counter"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -48,8 +50,7 @@ ActiveRecord::Schema.define(:version => 20131106043712) do
 
   create_table "tags", :force => true do |t|
     t.string   "name"
-    t.string   "type"
-    t.integer  "count"
+    t.string   "tag_type"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -64,9 +65,10 @@ ActiveRecord::Schema.define(:version => 20131106043712) do
 
   create_table "user_tags", :force => true do |t|
     t.integer  "tag_id"
+    t.integer  "program_tag_id"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "users", :force => true do |t|

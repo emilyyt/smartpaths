@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Address:</b>
-  <%= @institution.address %>
+  <b>Name:</b>
+  <%= @institution.name %>
 </p>
 
 <p>
@@ -11,15 +11,18 @@
 </p>
 
 <p>
-  <b>Name:</b>
-  <%= @institution.name %>
+  <b>Address:</b>
+  <%= @institution.address %>
 </p>
 
 <p>
   <b>State:</b>
   <%= @institution.state %>
 </p>
-
+<p>
+  <b>State:</b>
+  <%= @institution.zip %>
+</p>
 
 <%= link_to 'Edit', edit_institution_path(@institution) %> |
 <%= link_to 'Back', institutions_path %>

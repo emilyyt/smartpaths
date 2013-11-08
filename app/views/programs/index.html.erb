@@ -13,7 +13,7 @@
 <% @programs.each do |program| %>
   <tr>
     <td><%= program.name %></td>
-    <td><%= program.institution_id %></td>
+    <td><%= program.institution.name %></td>
     <td><%= program.graduating_salary %></td>
     <td><%= link_to 'Show', program %></td>
     <td><%= link_to 'Edit', edit_program_path(program) %></td>

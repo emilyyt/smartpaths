@@ -14,6 +14,7 @@ class ProgramsController < ApplicationController
   # GET /programs/1.json
   def show
     @program = Program.find(params[:id])
+    @institution = Institution.find(@program.institution_id)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -41,6 +42,8 @@ class ProgramsController < ApplicationController
   # POST /programs.json
   def create
     @program = Program.new(params[:program])
+    logger.debug "hi emily"
+    @institution = Institution.find(params[:program][:institution_id])
 
     respond_to do |format|
       if @program.save

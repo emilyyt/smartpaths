@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   #Relationships
   has_many :user_tags
   has_many :user_programs
-  has_many :programs, :through => :user_programs
+  has_many :program_tags, :through => :user_programs
   has_many :tags, :through => :user_tags
 
 

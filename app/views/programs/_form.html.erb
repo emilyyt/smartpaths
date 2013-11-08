@@ -1,4 +1,4 @@
-<%= form_for(@program) do |f| %>
+<%= simple_form_for @program do |f| %>
   <% if @program.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@program.errors.count, "error") %> prohibited this program from being saved:</h2>
@@ -16,8 +16,8 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :institution_id %><br />
-    <%= f.text_field :institution_id %>
+    <%= f.label :institution_name %><br />
+    <%= collection_select :program, :institution_id, Institution.all, :id, :name, prompt: true%>
   </div>
   <div class="field">
     <%= f.label :graduating_salary %><br />

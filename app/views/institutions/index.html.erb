@@ -2,9 +2,9 @@
 
 <table>
   <tr>
-    <th>Address</th>
-    <th>City</th>
     <th>Name</th>
+    <th>City</th>
+    <th>Address</th>
     <th>State</th>
     <th></th>
     <th></th>
@@ -13,10 +13,11 @@
 
 <% @institutions.each do |institution| %>
   <tr>
-    <td><%= institution.address %></td>
-    <td><%= institution.city %></td>
     <td><%= institution.name %></td>
+    <td><%= institution.city %></td>
+    <td><%= institution.address %></td>
     <td><%= institution.state %></td>
+    <td><%= institution.zip %></td>
     <td><%= link_to 'Show', institution %></td>
     <td><%= link_to 'Edit', edit_institution_path(institution) %></td>
     <td><%= link_to 'Destroy', institution, method: :delete, data: { confirm: 'Are you sure?' } %></td>

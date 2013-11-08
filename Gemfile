@@ -5,7 +5,20 @@ gem 'rails', '3.2.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'simple_form'
+gem 'will_paginate'
+gem 'devise'
+gem 'bcrypt-ruby'
+
+# Bundle edge Rails instead:
+# gem 'rails', :git => 'git://github.com/rails/rails.git'
+group :development do
+    gem 'sqlite3'
+end
+
+group :production do
+    gem 'pg'
+end
 
 
 # Gems used only for assets and not required

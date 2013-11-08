@@ -14,7 +14,7 @@ class ProgramTagsController < ApplicationController
   # GET /program_tags/1.json
   def show
     @program_tag = ProgramTag.find(params[:id])
-
+    @tag_count = @program_tag.update_counter
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @program_tag }
@@ -41,6 +41,8 @@ class ProgramTagsController < ApplicationController
   # POST /program_tags.json
   def create
     @program_tag = ProgramTag.new(params[:program_tag])
+
+    @user_vote = UserTag.create(:program_tag_id => @program_tag.id, :user_id => current_user.id)
 
     respond_to do |format|
       if @program_tag.save
