@@ -9,6 +9,7 @@ gem 'simple_form'
 gem 'will_paginate'
 gem 'devise'
 gem 'bcrypt-ruby', :require => "bcrypt"
+gem 'cancan'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
