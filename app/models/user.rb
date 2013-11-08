@@ -1,5 +1,8 @@
+require 'bcrypt'
 class User < ActiveRecord::Base
-  attr_accessible :email, :first_name, :is_admin, :last_name, :password_digest
+  include BCrypt
+  attr_accessible :email, :first_name, :is_admin, :last_name, :password, :is_active, :password_hash, :password_salt
+  
   #Relationships
   has_many :user_tags
   has_many :user_programs
@@ -21,4 +24,15 @@ class User < ActiveRecord::Base
   # email must be unique and in proper format
   validates_presence_of :email
   validates_format_of :email, :with => /^[\w]([^@\s,;]+)@(([a-z0-9.-]+\.)+(com|edu|org|net|gov|mil|biz|info))$/i
+
+  def password
+    @password ||= Password.new(password_hash)
+  end
+
+  def password=(new_password)
+    @password = Password.create(new_password)
+    self.password_hash = @password
+  end
 end
+
+

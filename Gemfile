@@ -8,7 +8,7 @@ gem 'rails', '3.2.9'
 gem 'simple_form'
 gem 'will_paginate'
 gem 'devise'
-gem 'bcrypt-ruby'
+gem 'bcrypt-ruby', :require => "bcrypt"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

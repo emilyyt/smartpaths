@@ -1,4 +1,9 @@
 Smartpaths::Application.routes.draw do
+  get "home/index"
+  get "sessions/new"
+  
+  resources :password_resets
+
   resources :user_tags
 
 
@@ -22,7 +27,8 @@ Smartpaths::Application.routes.draw do
 
   resources :institutions
 
-
+  resources :sessions
+  root :to => "home#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

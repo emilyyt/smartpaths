@@ -24,7 +24,7 @@ class ProgramTagsController < ApplicationController
   # GET /program_tags/new
   # GET /program_tags/new.json
   def new
-    @program_tag = ProgramTag.new
+    @program_tag = ProgramTag.new(params[:purchased_stock])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,9 +41,6 @@ class ProgramTagsController < ApplicationController
   # POST /program_tags.json
   def create
     @program_tag = ProgramTag.new(params[:program_tag])
-
-    @user_vote = UserTag.create(:program_tag_id => @program_tag.id, :user_id => current_user.id)
-
     respond_to do |format|
       if @program_tag.save
         format.html { redirect_to @program_tag, notice: 'Program tag was successfully created.' }
