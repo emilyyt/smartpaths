@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
  # validates_length_of :password, :minimum => 4
   
   #validates_presence_of :username
-  #validates_uniqueness_of :username, :email
+  validates_uniqueness_of :email
   #validates_format_of :username, :with => /^[-\w\._@]+$/i, :message => "Username should only contain letters, numbers, or .-_@"
 
   # email must be unique and in proper format
