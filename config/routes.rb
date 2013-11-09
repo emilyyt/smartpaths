@@ -1,4 +1,5 @@
 Smartpaths::Application.routes.draw do
+
   get "home/index"
   
   get "log_out" => "sessions#destroy", :as => "log_out"
@@ -6,6 +7,7 @@ Smartpaths::Application.routes.draw do
   get "sign_up" => "users#new", :as => "sign_up"
   root :to => "users#new"
   resources :users
+  
   resources :sessions
   
   resources :password_resets
