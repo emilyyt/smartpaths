@@ -9,11 +9,16 @@ gem 'simple_form'
 gem 'will_paginate'
 gem 'devise'
 gem 'bcrypt-ruby', :require => "bcrypt"
+gem 'cancan'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development do
     gem 'sqlite3'
+end
+
+group :development do
+  gem "better_errors"
 end
 
 group :production do
