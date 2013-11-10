@@ -1,0 +1,22 @@
+
+ <div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="#">SmartPaths</a>
+	  <ul class="nav pull-right login_links">
+			<% if current_user %>
+				<li><%= link_to current_user.email, user_path(current_user) %></li>
+				<li><%= link_to "Logout", log_out_path %></li>
+			<% else %>
+				<li><%= link_to "Sign Up", sign_up_path %></li>
+				<li><%= link_to "Login", log_in_path %></li>
+			<% end %>
+	  	</ul>
+
+		<ul class="nav pull-left main_pages_links">
+			<% if current_user %>
+				<li><%= link_to "Home", root_url %></li>
+				<li><%= link_to "Programs", my_programs_path %></li>
+			<% end %>
+	  </ul>
+	</div>
+</div>

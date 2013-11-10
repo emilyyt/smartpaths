@@ -31,6 +31,11 @@ Smartpaths::Application.routes.draw do
 
   resources :institutions
 
+  get "programs" => "programs#show", :as => "my_programs"
+  match '/about', :to => 'home#about'
+  match '/feedback', :to => 'home#feedback'
+  match '/contact', :to => 'home#contact'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
