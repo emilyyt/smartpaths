@@ -12,7 +12,31 @@ class User < ActiveRecord::Base
   has_many :user_programs
   has_many :program_tags, :through => :user_programs
   has_many :tags, :through => :user_tags
+  
+  #Scopes
+  scope :alphabetical, order('last_name, first_name')
+  scope :admins, where('role = ?', 'Admin')
+  scope :normal_users, where('role = ?', 'User')
+  
+  def proper_name
+    "#{first_name} #{last_name}"
+  end
+  
+  def name
+    "#{last_name}, #{first_name}"
+  end
+  
+   # for use in authorizing with CanCan
+  ROLES = [['User', :user],['Admin', :admin]]
 
+  def role?(authorized_role)
+    return false if role.nil?
+    role.downcase.to_sym == authorized_role
+  end
+  
+  def is_admin?
+    role == "Admin"
+  end
 
   # Validations
   # -----------------------------
