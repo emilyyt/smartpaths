@@ -2,7 +2,7 @@ require 'bcrypt'
 class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation
   include BCrypt
-  attr_accessor :password
+  attr_accessor :password #<---- why is this here if in the schema, there's no password?
   before_save :encrypt_password
   
   #before_save :encrypt_password
