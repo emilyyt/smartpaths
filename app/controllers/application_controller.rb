@@ -20,6 +20,6 @@ private
   
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = "You do not have access to this page"
-    redirect_to home_path
+    redirect_to root_url
   end
 end

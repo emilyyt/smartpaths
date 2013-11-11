@@ -9,13 +9,33 @@ class Ability
     if user.role? :admin
       # they get to do it all
       can :manage, :all
-      
     elsif user.role? :user
-      #Place holder for user methods
-      #can :tag, Programs
-      #can :review, Programs
+      # they can read their own profile
+      can :show, User
+      
+      # they can update their own profile
+      can :update, User
+
+      # they can make reviews
+      can :create, Review
+
+      # they can read reviews
+      can :read, Review
     else
-      can :read, :all
+      # guests can read programs
+      #can :read, Programs
+      
+      # guests can read institutions
+      #can :read, Institutions
+      
+      # guests can read reviews
+      #can :read, Reviews
+
+      # guests can view tags
+      #can :read, Tags
+
+      # guests can create users
+      can :create, User
     end
       
       
