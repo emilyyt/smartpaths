@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131108205607) do
+ActiveRecord::Schema.define(:version => 20131110231454) do
 
   create_table "institutions", :force => true do |t|
     t.string   "address"
@@ -78,8 +78,9 @@ ActiveRecord::Schema.define(:version => 20131108205607) do
     t.boolean  "is_admin"
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
-    t.string   "password_hash"
-    t.string   "password_salt"
+    t.string   "password_hash", :limit => nil
+    t.string   "password_salt", :limit => nil
+    t.string   "role"
   end
 
 end
