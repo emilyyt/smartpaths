@@ -20,7 +20,18 @@ body {
 	font-size: 14px;
 	color: #333;
 }
-
+h1 {
+	color: white;
+}
+.main_background{
+	background-image: url("main_background.jpg");
+	background-size: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100%;
+	text-align: center;
+	background-repeat: no-repeat;
+}
 
 /* Header styles */
 #navbar_style_adj{
