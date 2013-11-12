@@ -10,6 +10,7 @@ gem 'will_paginate'
 gem 'devise'
 gem 'bcrypt-ruby', :require => "bcrypt"
 gem 'cancan'
+gem 'coderay'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -22,7 +23,7 @@ group :development do
 end
 
 group :production do
-    gem 'pg'
+    # gem 'pg'
 end
 
 
