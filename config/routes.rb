@@ -31,7 +31,8 @@ Smartpaths::Application.routes.draw do
 
   resources :institutions
 
-  get "programs" => "programs#show", :as => "my_programs"
+  get "programs" => "programs#index", :as => "my_programs"
+  get "institutions" => "institutions#index", :as => "my_institutions"
   match '/about', :to => 'home#about'
   match '/feedback', :to => 'home#feedback'
   match '/contact', :to => 'home#contact'

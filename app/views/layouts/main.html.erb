@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smartpaths</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body class="main_background">
+		<%= render :partial => 'partials/header'%>
+	 	<div class="container">
+	  	<div class="row">
+	  		<div class="span12">
+	 				<%= yield %>
+	 			</div>
+	 		</div>
+	 	</div>
+		<%= render :partial => 'partials/footer'%>
+</body>
+</html>
