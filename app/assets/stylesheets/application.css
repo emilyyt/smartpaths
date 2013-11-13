@@ -16,7 +16,7 @@
 /* generic styles */
 body {
 	background-color: white;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: 'Lato','Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	color: #333;
 }
@@ -32,10 +32,27 @@ body {
 	background-repeat: no-repeat;
 }
 
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+
 /* Header styles */
 #navbar_style_adj {
 	background-image: none;
 	background-color: green;
+	border: none;
+}
+
+.navbar-inner .brand {
+	font-family: 'Pathway Gothic One';
+	font-size: 25px;
+	letter-spacing: 1px;
+	text-transform: uppercase
 }
 
 .navbar-inner .brand, .navbar #navbar_links li a {
@@ -58,5 +75,36 @@ body {
 .home_heading span{
 	color: green;
 	font-size: 66px;
+}
+
+.program_institution_name {
+	font-size: 13px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.program_metrics{
+	margin-top: 30px;
+	padding: 15px 25px 15px 0;
+	border-radius: 5px 5px 5px 5px; 
+	border: 1px solid #DBDBDB;
+	width: 60%;
+}
+
+.program_metrics li {
+	line-height: 2.0;
+}
+
+.program_general_stats {
+	float: left;
+}
+
+.program_general_stats span{
+	color: green;
+	font-size: 18px;
+}
+.program_rating_stats {
+	float: right;
+	padding-left: -10px;
 }
 /* Footer styles */

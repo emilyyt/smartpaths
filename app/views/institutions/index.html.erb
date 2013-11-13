@@ -3,8 +3,8 @@
 <table class="table">
   <tr>
     <th>Name</th>
-    <th>City</th>
     <th>Address</th>
+    <th>City</th>
     <th>State</th>
     <th>Zip</th>
     <th>Show</th>
@@ -15,8 +15,8 @@
 <% @institutions.each do |institution| %>
   <tr>
     <td><%= institution.name %></td>
-    <td><%= institution.city %></td>
     <td><%= institution.address %></td>
+    <td><%= institution.city %></td>
     <td><%= institution.state %></td>
     <td><%= institution.zip %></td>
     <td><%= link_to 'Show', institution %></td>
