@@ -20,12 +20,11 @@ body {
 	font-size: 14px;
 	color: #333;
 }
-h1 {
-	color: white;
-}
-.main_background{
+
+.main_background {
 	background-image: url("main_background.jpg");
 	background-size: 100%;
+	background-position: 50% 20%;
 	margin-left: auto;
 	margin-right: auto;
 	height: 100%;
@@ -34,7 +33,7 @@ h1 {
 }
 
 /* Header styles */
-#navbar_style_adj{
+#navbar_style_adj {
 	background-image: none;
 	background-color: green;
 }
@@ -44,4 +43,20 @@ h1 {
 	text-shadow: none;
 }
 /* Main content styles */
+
+.home_heading{
+	margin-top: 20%;
+}
+
+.home_heading h1 {
+	font-size: 66px;
+	font-family: 'Pathway Gothic One', Helvetica, Arial, sans-serif;
+	color: white;
+	text-transform: uppercase;
+}
+
+.home_heading span{
+	color: green;
+	font-size: 66px;
+}
 /* Footer styles */
