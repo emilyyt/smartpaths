@@ -25,12 +25,11 @@
 </div>
 <div class="program_gallery">
 	<img src="../assets/cmu.png" alt="Program photo"/>
-	<img class="standby_images"src="../assets/cmu.png" alt="Program photo"/>
-	<img class="standby_images"src="../assets/cmu.png" alt="Program photo"/>
-	<img class="standby_images"src="../assets/cmu.png" alt="Program photo"/>
-	<img class="standby_images"src="../assets/cmu.png" alt="Program photo"/>
+	<!-- All standby_images are in one line to remove the implicit white space between inline elements -->
+	<img class="standby_images"src="../assets/cmu.png" alt="Program photo"/><img class="standby_images"src="../assets/cmu.png" alt="Program photo"/><img class="standby_images"src="../assets/cmu.png" alt="Program photo"/><img class="standby_images"src="../assets/cmu.png" alt="Program photo"/>
 </div>
 
 
-<%= link_to 'Edit', edit_program_path(@program) %> |
+<div> <%= link_to 'Edit', edit_program_path(@program) %> |
 <%= link_to 'Back', programs_path %>
+</div>
