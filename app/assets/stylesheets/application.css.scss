@@ -38,9 +38,9 @@ body {
 }
 
 .main_background {
-	background-image: url("main_background.jpg");
+	background-image: url("main_background2.png");
 	background-size: 100%;
-	background-position: 50% 20%;
+	background-position: 50% 25%;
 	margin-left: auto;
 	margin-right: auto;
 	height: 100%;
@@ -88,10 +88,11 @@ body {
 	font-family: 'Pathway Gothic One', Helvetica, Arial, sans-serif;
 	color: white;
 	text-transform: uppercase;
+	text-shadow: #555 0.05em 0.05em 0.05em;
 }
 
 .home_heading span{
-	color: $theme-color;
+	color: #24961A;
 	font-size: 66px;
 }
 
