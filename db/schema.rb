@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20131114203016) do
   create_table "reviews", :force => true do |t|
     t.integer  "program_id"
     t.integer  "rating"
-    t.integer  "text"
+    t.string   "text"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -120,27 +120,11 @@ ActiveRecord::Schema.define(:version => 20131114203016) do
     t.string   "first_name"
     t.string   "last_name"
     t.boolean  "is_admin"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.string   "password_hash"
-    t.string   "password_salt"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.string   "password_hash", :limit => nil
+    t.string   "password_salt", :limit => nil
     t.string   "role"
   end
-
-  create_table "votes", :force => true do |t|
-    t.integer  "votable_id"
-    t.string   "votable_type"
-    t.integer  "voter_id"
-    t.string   "voter_type"
-    t.boolean  "vote_flag"
-    t.string   "vote_scope"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
-  add_index "votes", ["votable_id", "votable_type", "vote_scope"], :name => "index_votes_on_votable_id_and_votable_type_and_vote_scope"
-  add_index "votes", ["votable_id", "votable_type"], :name => "index_votes_on_votable_id_and_votable_type"
-  add_index "votes", ["voter_id", "voter_type", "vote_scope"], :name => "index_votes_on_voter_id_and_voter_type_and_vote_scope"
-  add_index "votes", ["voter_id", "voter_type"], :name => "index_votes_on_voter_id_and_voter_type"
 
 end
