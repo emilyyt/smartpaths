@@ -18,198 +18,83 @@ namespace :db do
 	
   	#Step 1: Add users
 
-    ru = User.new
-    ru.active = true
-    ru.email = "rupzilla@gmail.com"
-    ru.password = "skillshare"
-    ru.first_name = "Rupa"
-    ru.last_name = "Patel"
-    ru.interests = "Life Coach, Boss"
-#	ru.major = "Information Systems"
-    ru.save!
+    ti = User.new
+    ti.active = true
+    ti.email = "tahsin@gmail.com"
+    ti.password = "smartpaths"
+    ti.first_name = "Tahsin"
+    ti.last_name = "Islam"
+    ti.save!
 
 
-    eu = User.new
-    eu.active = true
-    eu.email = "eman@gmail.com"
-    eu.password = "skillshare"
-    eu.first_name = "Emmanuel"
-    eu.last_name = "Ruiz"
-    eu.interests = "Adobe After Effects, Maya 3d Applications"
-#	eu.major = "Information Systems"
-    eu.save!
+    et = User.new
+    et.active = true
+    et.email = "emily@gmail.com"
+    et.password = "smartpaths"
+    et.first_name = "Emily"
+    et.last_name = "Tsai"
+    et.save!
 
-    bu = User.new
-    bu.active = true
-    bu.email = "barnik@gmail.com"
-    bu.password = "skillshare"
-    bu.first_name = "Barnik"
-    bu.last_name = "Saha"
-    bu.interests = "Adobe Photoshop, Adobe Illustrator"
-#	bu.major = "Information Systems"
-    bu.save!
-
-
-    ju = User.new
-    ju.active = true
-    ju.email = "juhee@gmail.com"
-    ju.password = "skillshare"
-    ju.first_name = "Juhee"
-    ju.last_name = "Song"
-    ju.interests = "Adobe After Effects, Microsoft Office Suite"
-#	ju.major = "Information Systems"
-    ju.save!
-
-
-    ryu = User.new
-    ryu.active = true
-    ryu.email = "ryan@gmail.com"
-    ryu.password = "skillshare"
-    ryu.first_name = "Ryan"
-    ryu.last_name = "Rowe"
-    ryu.interests = "iPhone Development, Chemical extraction"
-#	ryu.major = "Information Systems"
-    ryu.save!
-
-    du = User.new
-    du.active = true
-    du.email = "drew@gmail.com"
-    du.password = "skillshare"
-    du.first_name = "Drew"
-    du.last_name = "James"
-    du.interests = "Computer puppets and dummies"
-#	du.major = "Computer Science"
-    du.save!
-
-    mu = User.new
-	mu.active = true
-    mu.email = "mike@gmail.com"
-    mu.password = "skillshare"
-    mu.first_name = "Michael"
-    mu.last_name = "Snipes"
-    mu.interests = "Abstract pancake-making"
-#	mu.major = "CFA"
-    mu.save!
-	
-	      xs = User.new
-    	xs.active = true
-        xs.email = "andy@gmail.com"
-        xs.password = "skillshare"
-        xs.first_name = "Andy"
-        xs.last_name = "Johnson"
-        xs.interests = "Glass-blowing"
-        xs.save!
-        
-        ae = User.new
-        ae.active = true
-        ae.email = "einstein@gmail.com"
-        ae.password = "skillshare"
-        ae.first_name = "Albert"
-        ae.last_name = "Einstein"
-        ae.interests = "Violins flying at the speed of light"
-        ae.save!
-        
-        nt = User.new
-        nt.active = true
-        nt.email = "tesla@gmail.com"
-        nt.password = "skillshare"
-        nt.first_name = "Nikola"
-        nt.last_name = "Tesla"
-        nt.interests = "Wireless energy"
-        nt.save!
-        
-        bp = User.new
-        bp.active = true
-        bp.email = "bob@gmail.com"
-        bp.password = "skillshare"
-        bp.first_name = "Bob"
-        bp.last_name = "Parker"
-        bp.interests = "Long walks on the beach"
-        bp.save!
-        
-        sp = User.new
-        sp.active = true
-        sp.email = "sean@gmail.com"
-        sp.password = "skillshare"
-        sp.first_name = "Sean"
-        sp.last_name = "Parker"
-        sp.interests = "Solar energy"
-        sp.save!
-
-  
-  
-    #Step 2: Make some Sharers
-
-    bps = Sharer.new
-    bps.user_id = bp.id
-    bps.credentials = "Worked at Apple"
-    bps.major = "Physics"
-    bps.save!
-
-    sps = Sharer.new
-    sps.user_id = sp.id
-    sps.credentials = "Stuff"
-    sps.major = "moar stuff"
-    sps.save!
-
-    aes = Sharer.new
-    aes.user_id = ae.id
-    aes.credentials = "E=mc2"
-    aes.major = "Science"
-    aes.save!
-
-    nts = Sharer.new
-    nts.user_id = nt.id
-    nts.credentials = "Stuff"
-    nts.major = "moar stuff"
-    nts.save!
-
-        xsh = Sharer.new
-        xsh.user_id = xs.id
-        xsh.credentials = "Art club, Robotics Club "
-        xsh.major = "Internation Relations"
-        xsh.save!
-
-    js = Sharer.new
-    js.user_id = bu.id
-#	js.first_name = "Barnik"
-#	js.last_name = "Saha"
-    js.credentials = "Policy club, Sports referee "
-    js.major = "Internation Relations"
+    js = User.new
+    js.active = true
+    js.email = "juhee@gmail.com"
+    js.password = "smartpaths"
+    js.first_name = "Juhee"
+    js.last_name = "Song"
     js.save!
+
+
+    mt = User.new
+    mt.active = true
+    mt.email = "marco@gmail.com"
+    mt.password = "smartpaths"
+    mt.first_name = "Marco"
+    mt.last_name = "Talabacu"
+    mt.save!
+
+
+    et = User.new
+    et.active = true
+    et.email = "emily@gmail.com"
+    et.password = "smartpaths"
+    et.first_name = "Emily"
+    et.last_name = "Tsai"
+    et.save!
+  
+  
+    #Step 2: Make some Programs
+
+    hci = program.new
+    hci.institution_id = 
+    hci.name = "Human Computer Interaction"
+    hci.graduating_salary = 95000
+    hci.save!
     
+    ba = program.new
+    ba.institution_id = 
+    ba.name = "Business Administration"
+    ba.graduating_salary = 80000
+    ba.save!
     
-    ry = Sharer.new
-    ry.user_id = ryu.id
-#	ry.first_name = "Ryan"
-#	ry.last_name = "Rowe"
-    ry.credentials = "Sports"
-    ry.major = "Information Systems"
-    ry.save!
+    chem = program.new
+    chem.institution_id = 
+    chem.name = "Chemistry"
+    chem.graduating_salary = 60000
+    chem.save!
+    
+    ah = program.new
+    ah.institution_id = 
+    ah.name = "Art History"
+    ah.graduating_salary = 35000
+    ah.save!
+    
+    cd = program.new
+    cd.institution_id = 
+    cd.name = "Communication Design"
+    cd.graduating_salary = 70000
+    cd.save!
 
-    rs = Sharer.new
-    rs.user_id = ru.id
-#	rs.first_name = "Rupa"
-#	rs.last_name = "Patel"
-    rs.credentials = "Cluster Consultant, Chef "
-    rs.major = "Information Systems"
-    rs.save!
-
-    ds = Sharer.new
-	ds.user_id = du.id
-#	ds.first_name = "Drew"
-#	ds.last_name = "James"
-    ds.credentials = "HTML5 Web Developer, e-Commerce & Online Business "
-    ds.major = "Computer Science"
-    ds.save!
-
-    ms = Sharer.new
-	ms.user_id = mu.id
-#	ms.first_name = "Michael"
-#	ms.last_name = "Snipes"
-    ms.credentials = "Free Style Painting, Music Engineering, Professional Writing for Dr. Suess "
-    ms.major = "CFA"
-    ms.save!
+    
 
 	#Step 3: Make some Workshops
   
