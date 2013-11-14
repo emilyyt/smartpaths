@@ -16,11 +16,11 @@
 		<li>Student : Faculty Ratio  <span>10 : 1</span></li>
 	</ul>
 	<ul class="program_rating_stats">
-		<li>2013 Overall Rating <span>*****</span></li>
+		<li><span id="overall_rating">Overall Rating</span><div class="star_rating_yellow"></div></li>
 		<li>Personal Value
-		  <span>*****</span></li>
-		<li>Academics <span>*****</span> </li>
-		<li>Jobs &amp; Internships <span>*****</span></li>
+		  <div class="star_rating_red"></div></li>
+		<li>Academics <div class="star_rating_blue"></div> </li>
+		<li>Jobs &amp; Internships <div class="star_rating_green"></div></li>
 	</ul>
 	<ul class="program_tags">
 			<li>Tags</li>
@@ -32,7 +32,13 @@
 			<%end%>
 	</ul>
 </div>
+<div class="program_gallery">
+	<img src="../assets/cmu.png" alt="Program photo"/>
+	<!-- All standby_images are in one line to remove the implicit white space between inline elements -->
+	<img class="standby_images"src="../assets/cmu.png" alt="Program photo"/><img class="standby_images"src="../assets/cmu.png" alt="Program photo"/><img class="standby_images"src="../assets/cmu.png" alt="Program photo"/><img class="standby_images"src="../assets/cmu.png" alt="Program photo"/>
+</div>
 
 
-<%= link_to 'Edit', edit_program_path(@program) %> |
+<div> <%= link_to 'Edit', edit_program_path(@program) %> |
 <%= link_to 'Back', programs_path %>
+</div>
