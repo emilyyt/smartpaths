@@ -6,7 +6,7 @@ class ProgramTag < ActiveRecord::Base
   has_many :users, :through => :user_tags
 
   before_save :default_vote_counter, :update_counter
-  after_create :create_user_tag
+  #after_create :create_user_tag
 
   def default_vote_counter
       self.counter ||= 0

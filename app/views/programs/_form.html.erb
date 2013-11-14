@@ -23,6 +23,16 @@
     <%= f.label :graduating_salary %><br />
     <%= f.text_field :graduating_salary %>
   </div>
+	<div class=field>
+		<p>
+	  <% for tag in Tag.all %>
+	    <%= check_box_tag "program[tag_ids][]", tag.id, @program.tags.include?(tag) %>
+			<%= hidden_field_tag "program[tag_ids][]", nil%>
+	    <%= tag.name %>
+	  <% end  %>
+	</p>
+	</div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

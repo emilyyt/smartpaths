@@ -22,6 +22,12 @@
 		<li>Academics <span>*****</span> </li>
 		<li>Jobs &amp; Internships <span>*****</span></li>
 	</ul>
+	<ul class="program_tags">
+			<li>Tags</li>
+			<% for tag in @program.tags%>
+			<li><%= tag.name%></li>
+			<%end%>
+	</ul>
 </div>
 
 
