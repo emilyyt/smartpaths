@@ -58,6 +58,10 @@ body {
 	}
 
 /* Header styles */
+
+.navbar{
+	margin-bottom: 0;
+}
 #navbar_style_adj {
 	background-image: none;
 	background-color: $theme-color;
@@ -88,7 +92,7 @@ body {
 	font-family: 'Pathway Gothic One', Helvetica, Arial, sans-serif;
 	color: white;
 	text-transform: uppercase;
-	text-shadow: #555 0.05em 0.05em 0.05em;
+	text-shadow: #444 0.05em 0.05em 0.05em;
 }
 
 .home_heading span{
@@ -103,6 +107,7 @@ body {
 }
 
 .program_metrics{
+	display: inline-block;
 	margin-top: 30px;
 	padding: 15px 25px 15px 0;
 	@include rounded-corners(7px);
@@ -172,4 +177,17 @@ body {
 
 	}
 }
+
+.program_gallery {
+	margin-top: 30px;
+	@include rounded-corners(5px);
+	border: 1px solid silver;
+	height: 200px;
+	width: 300px;
+	float: right;
+	img{
+		width: 100%;
+	}
+}
+
 /* Footer styles */
