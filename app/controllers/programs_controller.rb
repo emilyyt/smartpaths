@@ -42,7 +42,7 @@ class ProgramsController < ApplicationController
   # POST /programs.json
   def create
     @program = Program.new(params[:program])
-    logger.debug "hi emily"
+   # logger.debug "hi emily"
     @institution = Institution.find(params[:program][:institution_id])
 
     respond_to do |format|

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   
-  # authorize_resource
+  load_and_authorize_resource
   
   def new
     @user = User.new
@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    
 
     respond_to do |format|
       format.html # index.html.erb

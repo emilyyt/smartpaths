@@ -11,6 +11,7 @@ gem 'devise'
 gem 'bcrypt-ruby', :require => "bcrypt"
 gem 'cancan'
 gem 'coderay'
+gem 'activerecord-reputation-system', require: 'reputation_system'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
