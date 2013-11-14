@@ -17,7 +17,9 @@ Smartpaths::Application.routes.draw do
 
   resources :user_programs
 
-  resources :tags
+  resources :tags do
+    member {post :vote}
+  end
 
 
   resources :reviews

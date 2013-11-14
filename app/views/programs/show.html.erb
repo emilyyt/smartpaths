@@ -26,6 +26,9 @@
 			<li>Tags</li>
 			<% for tag in @program.tags%>
 			<li><%= tag.name%></li>
+			<%= pluralize tag.reputation_for(:votes).to_i, "vote" %>
+		  <li><%= link_to "up", vote_tag_path(tag, type: "up"), method: "post" %></li>
+			<li><%= link_to "down", vote_tag_path(tag, type: "down"), method: "post" %></li>
 			<%end%>
 	</ul>
 </div>
