@@ -7,15 +7,13 @@
     <th>Graduating salary</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @programs.each do |program| %>
   <tr>
     <td><%= program.name %></td>
-    <td><%= program.institution.name %></td>
+    <td><%= link_to program.institution.name, program %></td>
     <td>$<%= number_with_delimiter(program.graduating_salary, :delimiter => ',') %></td>
-    <td><%= link_to 'Show', program %></td>
     <td><%= link_to 'Edit', edit_program_path(program) %></td>
     <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
