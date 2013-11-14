@@ -11,6 +11,7 @@ gem 'devise'
 gem 'bcrypt-ruby', :require => "bcrypt"
 gem 'cancan'
 gem 'coderay'
+gem 'pg'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -23,7 +24,7 @@ group :development do
 end
 
 group :production do
-    # gem 'pg'
+    #gem 'pg'
 end
 
 
