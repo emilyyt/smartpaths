@@ -37,6 +37,10 @@ body {
 	color: #333;
 }
 
+h1 {
+	font-size: 32px;
+}
+
 .main_background {
 	background-image: url("main_background2.png");
 	background-size: 100%;
@@ -55,17 +59,11 @@ body {
 	content: " ";
 	clear: both;
 	height: 0;
-	}
-
-h2 {
-	margin-top: 30px;
 }
+
 
 /* Header styles */
 
-.navbar{
-	margin-bottom: 0;
-}
 #navbar_style_adj {
 	background-image: none;
 	background-color: $theme-color;
