@@ -40,15 +40,6 @@ body {
 h1 {
 	font-size: 32px;
 }
-/*Form style*/
-label {
-	display: inline-block;
-	padding-right: 10px;
-}
-
-.field {
-	margin-bottom: 15px;
-}
 
 .main_background {
 	background-image: url("main_background2.png");
@@ -208,5 +199,13 @@ label {
 		border: 1px solid #444;
 	}
 }
+/*Form style*/
+label {
+	display: inline-block;
+	padding-right: 10px;
+}
 
+.field {
+	margin-bottom: 15px;
+}
 /* Footer styles */
