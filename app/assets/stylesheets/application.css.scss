@@ -40,6 +40,15 @@ body {
 h1 {
 	font-size: 32px;
 }
+/*Form style*/
+label {
+	display: inline-block;
+	padding-right: 10px;
+}
+
+.field {
+	margin-bottom: 15px;
+}
 
 .main_background {
 	background-image: url("main_background2.png");
@@ -103,7 +112,7 @@ h1 {
 }
 
 .program_institution_name {
-	font-size: 13px;
+	font-size: 18px;
 	text-transform: uppercase;
 	font-weight: 700;
 }

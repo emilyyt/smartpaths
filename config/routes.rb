@@ -35,6 +35,7 @@ Smartpaths::Application.routes.draw do
 
   get "programs" => "programs#index", :as => "my_programs"
   get "institutions" => "institutions#index", :as => "my_institutions"
+  get "tags" => "tags#index", :as => "my_tags"
   match '/about', :to => 'home#about'
   match '/feedback', :to => 'home#feedback'
   match '/contact', :to => 'home#contact'
