@@ -145,10 +145,13 @@ namespace :db do
 
   # Step 4: Add new Reviews
 	r1 = Review.new
-  r1.program_id = 
-	r1.rating = ws2.id
-	r1.user_id = ju.id
+  r1.program_id = i1.id
+	r1.rating = 
+	r1.user_id = 
 	r1.save!
+  
+  
+  
   
   #Step 5: Add upvotes
 	uv = Upvote.new

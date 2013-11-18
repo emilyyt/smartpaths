@@ -42,12 +42,12 @@ class ProgramsController < ApplicationController
   # POST /programs.json
   def create
     @program = Program.new(params[:program])
-    logger.debug "hi emily"
+   # logger.debug "hi emily"
     @institution = Institution.find(params[:program][:institution_id])
 
     respond_to do |format|
       if @program.save
-        format.html { redirect_to @program, notice: 'Program was successfully created.' }
+        format.html { redirect_to @program, notice: "Program was successfully created." }
         format.json { render json: @program, status: :created, location: @program }
       else
         format.html { render action: "new" }
