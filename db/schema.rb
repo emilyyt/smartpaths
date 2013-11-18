@@ -120,11 +120,11 @@ ActiveRecord::Schema.define(:version => 20131114203016) do
     t.string   "first_name"
     t.string   "last_name"
     t.boolean  "is_admin"
+    t.string   "role"
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
     t.string   "password_hash", :limit => nil
     t.string   "password_salt", :limit => nil
-    t.string   "role"
   end
 
 end

@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
   ROLES = [['User', :user],['Admin', :admin]]
 
   def role?(authorized_role)
-    return false if role.nil?
+    return false if self.role.nil?
     role.downcase.to_sym == authorized_role
   end
   

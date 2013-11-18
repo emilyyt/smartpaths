@@ -2,7 +2,6 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-<<<<<<< HEAD
     # Define abilities for the passed in user here. For example:
     #
 	user ||= User.new # guest user (not logged in)
@@ -15,7 +14,6 @@ class Ability
 		# else
 			# can :read, :all
 		# end
-=======    
     elsif user.role? :user
 		# they can read their own profile
 		can :show, User
@@ -34,7 +32,7 @@ class Ability
 			user.id == t.user_id
 		end
 		can :manage, ProgramTag do |p|
-#			p.program in user.programs
+#			p.program in user_programs
 		end
 
     else

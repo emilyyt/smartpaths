@@ -10,5 +10,7 @@ class Program < ActiveRecord::Base
 
   validates_presence_of :institution
   validates_numericality_of :graduating_salary, :only_integer => true, :greater_than_or_equal_to => 0
+  
+  scope :for_institution, lambda {|institution| where("institution_id = ?", "#{institution.id}") }
 
 end
