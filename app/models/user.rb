@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   has_many :user_programs
   has_many :program_tags, :through => :user_programs
   has_many :tags, :through => :user_tags
+  has_many :reviews
 
 
   # Validations
@@ -52,6 +53,6 @@ class User < ActiveRecord::Base
       self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
     end
   end
+  
 end
-
 

@@ -23,7 +23,13 @@
 		<li>Jobs &amp; Internships <span>*****</span></li>
 	</ul>
 </div>
-
+<% if logged_in? %>
+	<div>
+		<h3>Reviews</h3>
+		<%= link_to 'Review this program', new_review_path %>
+		<br />
+	</div>
+<% end %>
 
 <%= link_to 'Edit', edit_program_path(@program) %> |
 <%= link_to 'Back', programs_path %>

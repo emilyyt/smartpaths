@@ -1,6 +1,8 @@
 class TagsController < ApplicationController
   # GET /tags
   # GET /tags.json
+  before_filter :check_login, :except => [:index, :show]
+  
   def index
     @tags = Tag.all
 
@@ -57,6 +59,7 @@ class TagsController < ApplicationController
   # PUT /tags/1.json
   def update
     @tag = Tag.find(params[:id])
+	authorize! :update, @tag
 
     respond_to do |format|
       if @tag.update_attributes(params[:tag])

@@ -17,6 +17,7 @@ private
   def check_login
     redirect_to log_in_url, alert: "You need to log in to view this page." if current_user.nil?
   end
+  helper_method :check_login
 
  #  rescue_from CanCan::AccessDenied do |exception|
  #    flash[:error] = "Nice Try, Prof. H. -- Qapla'!"
