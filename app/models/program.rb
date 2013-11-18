@@ -13,4 +13,13 @@ class Program < ActiveRecord::Base
   
   scope :for_institution, lambda {|institution| where("institution_id = ?", "#{institution.id}") }
 
+  #Returns top five tags for a program. First retrives tags, sorts them. Reverses list so goes in decreasing order then returns first five
+  def tfivetags
+    tag_array = self.tags
+    sort_array = tag_array.sort!{|a,b| a.reputation_for(:votes) <=> b.reputation_for(:votes)}
+    sort_array.reverse!
+    topfive = sort_array.take(5)
+    topfive
+  end
+
 end

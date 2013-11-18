@@ -10,7 +10,7 @@
 		Tag:
 	</div>
 	<ul>
-			<% for tag in @program.tags%>
+			<% for tag in @program.tfivetags%>
 			<li><%= tag.name%></li>
 			<%= pluralize tag.reputation_for(:votes).to_i, "vote" %>
 		  <li><%= link_to "up", vote_tag_path(tag, type: "up"), method: "post" %></li>

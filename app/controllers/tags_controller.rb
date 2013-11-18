@@ -3,6 +3,7 @@ class TagsController < ApplicationController
   # GET /tags.json
   before_filter :check_login, :except => [:index, :show]
   
+  
   def index
     @tags = Tag.all
 
@@ -27,6 +28,7 @@ class TagsController < ApplicationController
   # GET /tags/new.json
   def new
     @tag = Tag.new
+	authorize! :create, @tag
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,6 +39,7 @@ class TagsController < ApplicationController
   # GET /tags/1/edit
   def edit
     @tag = Tag.find(params[:id])
+	authorize! :update, @tag
   end
 
   # POST /tags
@@ -81,6 +84,7 @@ class TagsController < ApplicationController
   # DELETE /tags/1.json
   def destroy
     @tag = Tag.find(params[:id])
+	authorize! :delete, @tag
     @tag.destroy
 
     respond_to do |format|

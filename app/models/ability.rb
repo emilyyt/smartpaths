@@ -16,7 +16,7 @@ class Ability
 		# end
     elsif user.role? :user
 		# they can read their own profile
-		can :show, User
+		can :read, User
 		# they can update their own profile
 		can :update, User do |u|
 			u.id == user.id
