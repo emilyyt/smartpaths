@@ -11,6 +11,8 @@ class Program < ActiveRecord::Base
   validates_presence_of :institution
   validates_numericality_of :graduating_salary, :only_integer => true, :greater_than_or_equal_to => 0
   
+  scope :for_institution, lambda {|institution| where("institution_id = ?", "#{institution.id}") }
+
   #Returns top five tags for a program. First retrives tags, sorts them. Reverses list so goes in decreasing order then returns first five
   def tfivetags
     tag_array = self.tags

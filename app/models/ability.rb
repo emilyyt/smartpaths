@@ -2,25 +2,38 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    # set user to new User if not logged in
-    user ||= User.new # i.e., a guest user
-    
-    # set authorizations for different user roles
-    if user.role? :admin
+    # Define abilities for the passed in user here. For example:
+    #
+	user ||= User.new # guest user (not logged in)
+	# set authorizations for different user roles
+	if user.role? :admin
       # they get to do it all
-      can :manage, :all
+		can :manage, :all
+        # if user.admin?
+			# can :manage, :all
+		# else
+			# can :read, :all
+		# end
     elsif user.role? :user
-      # they can read their own profile
-      can :show, User
-      
-      # they can update their own profile
-      can :update, User
-
-      # they can make reviews
-      can :create, Review
-
-      # they can read reviews
-      can :read, Review
+		# they can read their own profile
+		can :read, User
+		# they can update their own profile
+		can :update, User do |u|
+			u.id == user.id
+		end
+		# they can make reviews
+		can :create, Review
+		# they can read reviews
+		can :read, Review
+		can :update, Review do |review|
+			review.user_id == user.id
+		end
+		can :delete, Review do |review|
+			review.user_id == user.id
+		end
+		can :delete, UserTag do |t|
+			t.user_id == user.id
+		end
     else
       # guests can read programs
       #can :read, Programs

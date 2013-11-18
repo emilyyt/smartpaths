@@ -34,12 +34,20 @@
 		<li>Jobs &amp; Internships <div class="star_rating_green"></div></li>
 	</ul>
 </div>
+
 <div class="program_gallery">
 	<img src="../assets/cmu.png" alt="Program photo"/>
 	<!-- All standby_images are in one line to remove the implicit white space between inline elements -->
 	<img class="standby_images"src="../assets/cmu-word.jpeg" alt="Program photo"/><img class="standby_images"src="../assets/cmu-word.jpeg" alt="Program photo"/><img class="standby_images"src="../assets/cmu-word.jpeg" alt="Program photo"/><img class="standby_images"src="../assets/cmu-word.jpeg" alt="Program photo"/>
 </div>
 
+<% if logged_in? %>
+	<div>
+		<h3>Reviews</h3>
+		<%= link_to 'Review this program', new_review_path %>
+		<br />
+	</div>
+<% end %>
 
 <div> <%= link_to 'Edit', edit_program_path(@program) %> |
 <%= link_to 'Back', programs_path %>

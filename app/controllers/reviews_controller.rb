@@ -1,6 +1,8 @@
 class ReviewsController < ApplicationController
   # GET /reviews
   # GET /reviews.json
+  before_filter :check_login
+  
   def index
     @reviews = Review.all
     @programs = Program.all
@@ -15,6 +17,7 @@ class ReviewsController < ApplicationController
   # GET /reviews/1.json
   def show
     @review = Review.find(params[:id])
+
     @user = User.find(@review.user_id)
     @program = Program.find(@review.program_id)
 
@@ -28,6 +31,7 @@ class ReviewsController < ApplicationController
   # GET /reviews/new.json
   def new
     @review = Review.new
+#	authorize! :create, @review
 
     respond_to do |format|
       format.html # new.html.erb
