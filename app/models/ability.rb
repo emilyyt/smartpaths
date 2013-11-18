@@ -28,13 +28,12 @@ class Ability
 		can :update, Review do |review|
 			review.user_id == user.id
 		end
-		can :manage, UserTag do |t|
-			user.id == t.user_id
+		can :delete, Review do |review|
+			review.user_id == user.id
 		end
-		can :manage, ProgramTag do |p|
-#			p.program in user_programs
+		can :delete, UserTag do |t|
+			t.user_id == user.id
 		end
-
     else
       # guests can read programs
       #can :read, Programs

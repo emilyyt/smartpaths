@@ -1,6 +1,6 @@
 require 'bcrypt'
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :password_confirmation
+  attr_accessible :email, :password, :password_confirmation, :role
   include BCrypt
   attr_accessor :password #<---- why is this here if in the schema, there's no password?
   before_save :encrypt_password
@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
 
   def role?(authorized_role)
     return false if self.role.nil?
-    role.downcase.to_sym == authorized_role
+    self.role.downcase.to_sym == authorized_role
   end
   
   def is_admin?

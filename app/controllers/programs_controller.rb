@@ -27,6 +27,7 @@ class ProgramsController < ApplicationController
   # GET /programs/new.json
   def new
     @program = Program.new
+	authorize! :create, @program
 
     respond_to do |format|
       format.html # new.html.erb

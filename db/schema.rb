@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20131114203016) do
   create_table "reviews", :force => true do |t|
     t.integer  "program_id"
     t.integer  "rating"
-    t.string   "text"
+    t.integer  "text"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -120,11 +120,12 @@ ActiveRecord::Schema.define(:version => 20131114203016) do
     t.string   "first_name"
     t.string   "last_name"
     t.boolean  "is_admin"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.string   "password_digest"
+    t.string   "password_hash",   :limit => nil
+    t.string   "password_salt",   :limit => nil
     t.string   "role"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
-    t.string   "password_hash", :limit => nil
-    t.string   "password_salt", :limit => nil
   end
 
 end
