@@ -36,10 +36,10 @@ class Ability
 		end
     else
       # guests can read programs
-      #can :read, Programs
+      can :read, Program
       
       # guests can read institutions
-      #can :read, Institutions
+      can :read, Institution
       
       # guests can read reviews
       #can :read, Reviews
