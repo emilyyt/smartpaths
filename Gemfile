@@ -18,6 +18,7 @@ gem 'activerecord-reputation-system', require: 'reputation_system'
 group :development do
     gem 'sqlite3'
     gem 'populator3'
+    gem 'faker'
 end
 
 group :development do

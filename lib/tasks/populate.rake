@@ -13,13 +13,13 @@ namespace :db do
     require 'faker'
 
     # Step 0: clear any old data in the db
-    [Sharer, Upvote, Subscription, Workshop, User].each(&:delete_all)
+    [User, UserTag, ProgramTag, Tag, Program, Institution, Review, UserProgram].each(&:delete_all)
 
 	
   	#Step 1: Add users
 
     ti = User.new
-    ti.active = true
+   
     ti.email = "tahsin@gmail.com"
     ti.password = "smartpaths"
     ti.first_name = "Tahsin"
@@ -29,7 +29,7 @@ namespace :db do
 
 
     et = User.new
-    et.active = true
+
     et.email = "emily@gmail.com"
     et.password = "smartpaths"
     et.first_name = "Emily"
@@ -38,7 +38,7 @@ namespace :db do
     et.save!
 
     js = User.new
-    js.active = true
+
     js.email = "juhee@gmail.com"
     js.password = "smartpaths"
     js.first_name = "Juhee"
@@ -48,7 +48,7 @@ namespace :db do
 
 
     mt = User.new
-    mt.active = true
+
     mt.email = "marco@gmail.com"
     mt.password = "smartpaths"
     mt.first_name = "Marco"
@@ -58,7 +58,7 @@ namespace :db do
 
 
     bs = User.new
-    bs.active = true
+
     bs.email = "barnik@gmail.com"
     bs.password = "smartpaths"
     bs.first_name = "Barnik"
@@ -67,7 +67,7 @@ namespace :db do
     bs.save!
     
     sp = User.new
-    sp.active = true
+
     sp.email = "sean@gmail.com"
     sp.password = "smartpaths"
     sp.first_name = "Sean"
@@ -76,7 +76,7 @@ namespace :db do
     sp.save!
     
     gs = User.new
-    gs.active = true
+
     gs.email = "greg@gmail.com"
     gs.password = "smartpaths"
     gs.first_name = "Gregory"
@@ -85,7 +85,7 @@ namespace :db do
     gs.save!
     
     as = User.new
-    as.active = true
+
     as.email = "alex@gmail.com"
     as.password = "smartpaths"
     as.first_name = "Alex"
@@ -94,7 +94,7 @@ namespace :db do
     as.save!
     
     cs = User.new
-    cs.active = true
+
     cs.email = "craig@gmail.com"
     cs.password = "smartpaths"
     cs.first_name = "Craig"
@@ -104,7 +104,7 @@ namespace :db do
     
     
     ds = User.new
-    ds.active = true
+
     ds.email = "dale@gmail.com"
     ds.password = "smartpaths"
     ds.first_name = "Dale"
@@ -113,7 +113,7 @@ namespace :db do
     ds.save!
     
     hs = User.new
-    hs.active = true
+
     hs.email = "howard@gmail.com"
     hs.password = "smartpaths"
     hs.first_name = "Howard"
@@ -123,7 +123,7 @@ namespace :db do
     
     
     es = User.new
-    es.active = true
+
     es.email = "earl@gmail.com"
     es.password = "smartpaths"
     es.first_name = "Earl"
@@ -133,7 +133,7 @@ namespace :db do
     
     
     fs = User.new
-    fs.active = true
+
     fs.email = "fox@gmail.com"
     fs.password = "smartpaths"
     fs.first_name = "Fox"
@@ -142,8 +142,8 @@ namespace :db do
     fs.save!
     
     rw = User.new
-    rw.active = true
-    rw.email = "dale@gmail.com"
+
+    rw.email = "randy@gmail.com"
     rw.password = "smartpaths"
     rw.first_name = "Randy"
     rw.last_name = "Weinberg"
@@ -151,7 +151,7 @@ namespace :db do
     rw.save!
     
     mh = User.new
-    mh.active = true
+
     mh.email = "mike@gmail.com"
     mh.password = "smartpaths"
     mh.first_name = "Mike"
@@ -162,37 +162,7 @@ namespace :db do
     
   
   
-    #Step 2: Make some Programs
 
-    hci = Program.new
-    hci.institution_id = 
-    hci.name = "Human Computer Interaction"
-    hci.graduating_salary = 95000
-    hci.save!
-    
-    ba = Program.new
-    ba.institution_id = 
-    ba.name = "Business Administration"
-    ba.graduating_salary = 80000
-    ba.save!
-    
-    chem = Program.new
-    chem.institution_id = 
-    chem.name = "Chemistry"
-    chem.graduating_salary = 60000
-    chem.save!
-    
-    ah = Program.new
-    ah.institution_id = 
-    ah.name = "Art History"
-    ah.graduating_salary = 35000
-    ah.save!
-    
-    cd = Program.new
-    cd.institution_id = 
-    cd.name = "Communication Design"
-    cd.graduating_salary = 70000
-    cd.save!
 
     
 
@@ -242,6 +212,39 @@ namespace :db do
 	i5.save!
 	
 	
+  
+  
+  #Step 2: Make some Programs
+
+  hci = Program.new
+  hci.institution_id = i1.id
+  hci.name = "Human Computer Interaction"
+  hci.graduating_salary = 95000
+  hci.save!
+  
+  ba = Program.new
+  ba.institution_id = i2.id
+  ba.name = "Business Administration"
+  ba.graduating_salary = 80000
+  ba.save!
+  
+  chem = Program.new
+  chem.institution_id = i3.id
+  chem.name = "Chemistry"
+  chem.graduating_salary = 60000
+  chem.save!
+  
+  ah = Program.new
+  ah.institution_id = i4.id
+  ah.name = "Art History"
+  ah.graduating_salary = 35000
+  ah.save!
+  
+  cd = Program.new
+  cd.institution_id = i5.id
+  cd.name = "Communication Design"
+  cd.graduating_salary = 70000
+  cd.save!
 
   # Step 4: Add new Reviews
 	r1 = Review.new
@@ -453,7 +456,89 @@ namespace :db do
   
   t1 = Tag.new
   t1.name = "Design"
-  t1.type = "Skill"
+  t1.tag_type = "Skill"
   t1.save!
+  
+  t2 = Tag.new
+  t2.name = "Business"
+  t2.tag_type = "Skill"
+  t2.save!
+  
+  t3 = Tag.new
+  t3.name = "Science"
+  t3.tag_type = "Skill"
+  t3.save!
+  
+  t4 = Tag.new
+  t4.name = "Art"
+  t4.tag_type = "Skill"
+  t4.save!
+  
+  t5 = Tag.new
+  t5.name = "Communication Design"
+  t5.tag_type = "Skill"
+  t5.save!
+  
+  
+  #Step 7: Add ProgramTags
+  
+  pt1 = ProgramTag.new
+  pt1.program_id = hci.id
+  pt1.tag_id = t1.id
+  pt1.counter = 0
+  pt1.save!
+  
+  pt2 = ProgramTag.new
+  pt2.program_id = ba.id
+  pt2.tag_id = t2.id
+  pt2.counter = 0
+  pt2.save!
+  
+  pt3 = ProgramTag.new
+  pt3.program_id = chem.id
+  pt3.tag_id = t3.id
+  pt3.counter = 0
+  pt3.save!
+  
+  pt4 = ProgramTag.new
+  pt4.program_id = ah.id
+  pt4.tag_id = t4.id
+  pt4.counter = 0
+  pt4.save!
+  
+  pt5 = ProgramTag.new
+  pt5.program_id = cd.id
+  pt5.tag_id = t5.id
+  pt5.counter = 0
+  pt5.save!
+  
+  
+  #Step 7: Add UserTags
+  
+    ut1 = UserTag.new
+    ut1.program_tag_id = pt1.id
+    ut1.user_id = ti.id
+    ut1.save!
+    
+    ut2 = UserTag.new
+    ut2.program_tag_id = pt2.id
+    ut2.user_id = et.id
+    ut2.save!
+    
+    ut3 = UserTag.new
+    ut3.program_tag_id = pt3.id
+    ut3.user_id = bs.id
+    ut3.save!
+    
+    ut4 = UserTag.new
+    ut4.program_tag_id = pt4.id
+    ut4.user_id = js.id
+    ut4.save!
+    
+    ut5 = UserTag.new
+    ut5.program_tag_id = pt5.id
+    ut5.user_id = bs.id
+    ut5.save!
+  
    end
 end
