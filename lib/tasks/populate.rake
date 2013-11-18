@@ -24,6 +24,7 @@ namespace :db do
     ti.password = "smartpaths"
     ti.first_name = "Tahsin"
     ti.last_name = "Islam"
+    ti.role = "Admin"
     ti.save!
 
 
@@ -33,6 +34,7 @@ namespace :db do
     et.password = "smartpaths"
     et.first_name = "Emily"
     et.last_name = "Tsai"
+    et.role = "Admin"
     et.save!
 
     js = User.new
@@ -41,6 +43,7 @@ namespace :db do
     js.password = "smartpaths"
     js.first_name = "Juhee"
     js.last_name = "Song"
+    js.role = "User"
     js.save!
 
 
@@ -50,16 +53,113 @@ namespace :db do
     mt.password = "smartpaths"
     mt.first_name = "Marco"
     mt.last_name = "Talabacu"
+    mt.role = "User"
     mt.save!
 
 
-    et = User.new
-    et.active = true
-    et.email = "emily@gmail.com"
-    et.password = "smartpaths"
-    et.first_name = "Emily"
-    et.last_name = "Tsai"
-    et.save!
+    bs = User.new
+    bs.active = true
+    bs.email = "barnik@gmail.com"
+    bs.password = "smartpaths"
+    bs.first_name = "Barnik"
+    bs.last_name = "Saha"
+    bs.role = "User"
+    bs.save!
+    
+    sp = User.new
+    sp.active = true
+    sp.email = "sean@gmail.com"
+    sp.password = "smartpaths"
+    sp.first_name = "Sean"
+    sp.last_name = "Parker"
+    sp.role = "User"
+    sp.save!
+    
+    gs = User.new
+    gs.active = true
+    gs.email = "greg@gmail.com"
+    gs.password = "smartpaths"
+    gs.first_name = "Gregory"
+    gs.last_name = "Smith"
+    gs.role = "User"
+    gs.save!
+    
+    as = User.new
+    as.active = true
+    as.email = "alex@gmail.com"
+    as.password = "smartpaths"
+    as.first_name = "Alex"
+    as.last_name = "Smith"
+    as.role = "User"
+    as.save!
+    
+    cs = User.new
+    cs.active = true
+    cs.email = "craig@gmail.com"
+    cs.password = "smartpaths"
+    cs.first_name = "Craig"
+    cs.last_name = "Smith"
+    cs.role = "User"
+    cs.save!
+    
+    
+    ds = User.new
+    ds.active = true
+    ds.email = "dale@gmail.com"
+    ds.password = "smartpaths"
+    ds.first_name = "Dale"
+    ds.last_name = "Smith"
+    ds.role = "User"
+    ds.save!
+    
+    hs = User.new
+    hs.active = true
+    hs.email = "howard@gmail.com"
+    hs.password = "smartpaths"
+    hs.first_name = "Howard"
+    hs.last_name = "Smith"
+    hs.role = "User"
+    hs.save!
+    
+    
+    es = User.new
+    es.active = true
+    es.email = "earl@gmail.com"
+    es.password = "smartpaths"
+    es.first_name = "Earl"
+    es.last_name = "Smith"
+    es.role = "User"
+    es.save!
+    
+    
+    fs = User.new
+    fs.active = true
+    fs.email = "fox@gmail.com"
+    fs.password = "smartpaths"
+    fs.first_name = "Fox"
+    fs.last_name = "Smith"
+    fs.role = "User"
+    fs.save!
+    
+    rw = User.new
+    rw.active = true
+    rw.email = "dale@gmail.com"
+    rw.password = "smartpaths"
+    rw.first_name = "Randy"
+    rw.last_name = "Weinberg"
+    rw.role = "User"
+    rw.save!
+    
+    mh = User.new
+    mh.active = true
+    mh.email = "mike@gmail.com"
+    mh.password = "smartpaths"
+    mh.first_name = "Mike"
+    mh.last_name = "Hoffman"
+    mh.role = "User"
+    mh.save!
+    
+    
   
   
     #Step 2: Make some Programs
@@ -146,25 +246,214 @@ namespace :db do
   # Step 4: Add new Reviews
 	r1 = Review.new
   r1.program_id = i1.id
-	r1.rating = 
-	r1.user_id = 
+	r1.rating = 4
+	r1.user_id = mt.id
+  r1.text = "This school is great for technical majors. People who graduate are very prepared for real jobs."
 	r1.save!
   
+	r2 = Review.new
+  r2.program_id = i1.id
+	r2.rating = 2
+	r2.user_id = bs.id
+  r2.text = "You get know social life at this school. Be prepared to only do work your 4 years here."
+	r2.save!
+  
+	r3 = Review.new
+  r3.program_id = i1.id
+	r3.rating = 5
+	r3.user_id = js.id
+  r3.text = "My son is having a blast at this school. He graduated with a CS degree and is very happy at his current job."
+	r3.save!
+  
+  
+	r4 = Review.new
+  r4.program_id = i2.id
+	r4.rating = 3
+	r4.user_id = et.id
+  r4.text = "The community is great. We all encourage each to do well and have fun at the same time. Wish more money went to gym facilities."
+	r4.save!
+  
+	r5 = Review.new
+  r5.program_id = i2.id
+	r5.rating = 5
+	r5.user_id = ti.id
+  r5.text = "I am so glad I graduated from here. I made some lifetime friends and learned so much from my time here. Great faculty!"
+	r5.save!
+  
+	r6 = Review.new
+  r6.program_id = i2.id
+	r6.rating = 1
+	r6.user_id = mh.id
+  r6.text = "This school is hard to get into and nothing like I expected. The school is filled with hippies."
+	r6.save!
+  
+	r7 = Review.new
+  r7.program_id = i3.id
+	r7.rating = 4
+	r7.user_id = rw.id
+  r7.text = "This school is good depending on your major. The social life is wonderful. I love the city."
+	r7.save!
+  
+	r8 = Review.new
+  r8.program_id = i3.id
+	r8.rating = 4
+	r8.user_id = fs.id
+  r8.text = "I wish living spaces were better, but other than that I love this place!"
+	r8.save!
+  
+	r9 = Review.new
+  r9.program_id = i3.id
+	r9.rating = 2
+	r9.user_id = es.id
+  r9.text = "Teachers are not very helpful when you are struggling with course load."
+	r9.save!
+  
+	r10 = Review.new
+  r10.program_id = i4.id
+	r10.rating = 1
+	r10.user_id = hs.id
+  r10.text = "You need to really love technology if you come here. People are stubborn and not friendly."
+	r10.save!
+  
+	r11 = Review.new
+  r11.program_id = i4.id
+	r11.rating = 2
+	r11.user_id = ds.id
+  r11.text = "The winters are too cold and I never signed up for this kind of lifestyle. Good prestige for the school."
+	r11.save!
+  
+	r12 = Review.new
+  r12.program_id = i4.id
+	r12.rating = 3
+	r12.user_id = cs.id
+  r12.text = "The work load is tough and you will be challenged. We need better facilities and more outlets for fun."
+	r12.save!
+  
+	r13 = Review.new
+  r13.program_id = i5.id
+	r13.rating = 5
+	r13.user_id = as.id
+  r13.text = "The weather is amazing, people are social and fun to be around."
+	r13.save!
+  
+	r14 = Review.new
+  r14.program_id = i5.id
+	r14.rating = 5
+	r14.user_id = gs.id
+  r14.text = "I've learned so much from my time here. Send your kid to this school!"
+	r14.save!
+  
+	r15 = Review.new
+  r15.program_id = i5.id
+	r15.rating = 4
+	r15.user_id = sp.id
+  r15.text = "You have your fair share of strange people but what campus doesn't? Everyone should go here."
+	r15.save!
   
   
   
-  #Step 5: Add upvotes
-	uv = Upvote.new
-	uv.workshop_id = ws1.id
-	uv.user_id = ju.id
-	uv.active = true
-	uv.save!
-
-  # uv1 = Upvote.new
-  # uv1.active = true
-  # uv1.workshop = ws6
-  # uv1.user = uu1.id
-  # uv1.save! 
   
+  
+  
+  #Step 5: Add UserPrograms
+	
+  up1 = UserProgram.new
+  up1.user_id = mt.id
+  up1.program_id = i1.id 
+  up1.graduating_year = 2014-01-05
+  up1.save!
+  
+  up2 = UserProgram.new
+  up2.user_id = bs.id
+  up2.program_id = i1.id 
+  up2.graduating_year = 2014-01-05
+  up2.save!
+  
+  up3 = UserProgram.new
+  up3.user_id = js.id
+  up3.program_id = i1.id 
+  up3.graduating_year = 2014-01-05
+  up3.save!
+  
+  up4 = UserProgram.new
+  up4.user_id = et.id
+  up4.program_id = i2.id 
+  up4.graduating_year = 2014-01-05
+  up4.save!
+  
+  up5 = UserProgram.new
+  up5.user_id = ti.id
+  up5.program_id = i2.id 
+  up5.graduating_year = 2014-01-05
+  up5.save!
+  
+  up6 = UserProgram.new
+  up6.user_id = mh.id
+  up6.program_id = i2.id 
+  up6.graduating_year = 2014-01-05
+  up6.save!
+  
+  up7 = UserProgram.new
+  up7.user_id = rw.id
+  up7.program_id = i3.id 
+  up7.graduating_year = 2014-01-05
+  up7.save!
+  
+  up8 = UserProgram.new
+  up8.user_id = fs.id
+  up8.program_id = i3.id 
+  up8.graduating_year = 2014-01-05
+  up8.save!
+  
+  up9 = UserProgram.new
+  up9.user_id = es.id
+  up9.program_id = i3.id 
+  up9.graduating_year = 2014-01-05
+  up9.save!
+  
+  up10 = UserProgram.new
+  up10.user_id = hs.id
+  up10.program_id = i4.id 
+  up10.graduating_year = 2014-01-05
+  up10.save!
+  
+  up11 = UserProgram.new
+  up11.user_id = ds.id
+  up11.program_id = i4.id 
+  up11.graduating_year = 2014-01-05
+  up11.save!
+  
+  up12 = UserProgram.new
+  up12.user_id = cs.id
+  up12.program_id = i4.id 
+  up12.graduating_year = 2014-01-05
+  up12.save!
+  
+  up13 = UserProgram.new
+  up13.user_id = as.id
+  up13.program_id = i5.id 
+  up13.graduating_year = 2014-01-05
+  up13.save!
+  
+  up14 = UserProgram.new
+  up14.user_id = gs.id
+  up14.program_id = i5.id 
+  up14.graduating_year = 2014-01-05
+  up14.save!
+  
+  up15 = UserProgram.new
+  up15.user_id = sp.id
+  up15.program_id = i5.id 
+  up15.graduating_year = 2014-01-05
+  up15.save!
+  
+  
+  
+  #Step 6: Add Tags
+  
+  t1 = Tag.new
+  t1.name = "Design"
+  t1.type = "Skill"
+  t1.save!
    end
 end
