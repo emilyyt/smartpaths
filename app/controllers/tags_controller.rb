@@ -71,7 +71,12 @@ class TagsController < ApplicationController
       end
     end
   end
-
+  def vote
+    value = params[:type] == "up" ? 1 : -1
+    @tag = Tag.find(params[:id])
+    @tag.add_or_update_evaluation(:votes, value, current_user)
+    redirect_to :back, notice: "Thank you for voting"
+  end
   # DELETE /tags/1
   # DELETE /tags/1.json
   def destroy

@@ -1,5 +1,5 @@
 class Program < ActiveRecord::Base
-  attr_accessible :graduating_salary, :institution_id, :name
+  attr_accessible :graduating_salary, :institution_id, :name, :tag_ids
   #Relationships
   belongs_to :institution
   has_many :program_tags

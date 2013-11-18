@@ -1,11 +1,22 @@
-<p id="notice"><%= notice %></p>
-
-<h2>
+<h1>
   <%= @program.name %>
-</h2>
+</h1>
 
 <div class="program_institution_name">
 	<%= link_to @institution.name, institution_path(@institution) %>
+</div>
+<div class="program_tags">
+	<div id="tag_label">
+		Tag:
+	</div>
+	<ul>
+			<% for tag in @program.tags%>
+			<li><%= tag.name%></li>
+			<%= pluralize tag.reputation_for(:votes).to_i, "vote" %>
+		  <li><%= link_to "up", vote_tag_path(tag, type: "up"), method: "post" %></li>
+			<li><%= link_to "down", vote_tag_path(tag, type: "down"), method: "post" %></li>
+			<%end%>
+	</ul>
 </div>
 <div class="program_metrics clearfix">
 	<ul class="program_general_stats">
@@ -16,13 +27,20 @@
 		<li>Student : Faculty Ratio  <span>10 : 1</span></li>
 	</ul>
 	<ul class="program_rating_stats">
-		<li>2013 Overall Rating <span>*****</span></li>
+		<li><span id="overall_rating">Overall Rating</span><div class="star_rating_yellow"></div></li>
 		<li>Personal Value
-		  <span>*****</span></li>
-		<li>Academics <span>*****</span> </li>
-		<li>Jobs &amp; Internships <span>*****</span></li>
+		  <div class="star_rating_red"></div></li>
+		<li>Academics <div class="star_rating_blue"></div> </li>
+		<li>Jobs &amp; Internships <div class="star_rating_green"></div></li>
 	</ul>
 </div>
+
+<div class="program_gallery">
+	<img src="../assets/cmu.png" alt="Program photo"/>
+	<!-- All standby_images are in one line to remove the implicit white space between inline elements -->
+	<img class="standby_images"src="../assets/cmu-word.jpeg" alt="Program photo"/><img class="standby_images"src="../assets/cmu-word.jpeg" alt="Program photo"/><img class="standby_images"src="../assets/cmu-word.jpeg" alt="Program photo"/><img class="standby_images"src="../assets/cmu-word.jpeg" alt="Program photo"/>
+</div>
+
 <% if logged_in? %>
 	<div>
 		<h3>Reviews</h3>
@@ -31,5 +49,6 @@
 	</div>
 <% end %>
 
-<%= link_to 'Edit', edit_program_path(@program) %> |
+<div> <%= link_to 'Edit', edit_program_path(@program) %> |
 <%= link_to 'Back', programs_path %>
+</div>

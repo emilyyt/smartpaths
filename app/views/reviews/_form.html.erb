@@ -11,22 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :program_id %><br />
-    <%= f.text_field :program_id %>
+  <div class="field"><br/>
+    <%= f.label :program_id %>
+    <%= collection_select :review, :program_id, Program.all, :id, :name, prompt: true%>
   </div>
   <div class="field">
-    <%= f.label :rating %><br />
-    <%= f.text_field :rating %>
+    <%= f.label :rating %>
+    <%= f.select :rating, [0,1,2,3,4,5] %>
   </div>
   <div class="field">
-    <%= f.label :text %><br />
-    <%= f.text_field :text %>
+    <%= f.label :text %>
+    <%= f.text_area :text %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </div>
+  <%= f.hidden_field :user_id %>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -29,4 +29,9 @@ private
 	# 	flash[:notice] = "Nice Try, Prof. H. -- Qapla'!"
 	# 	redirect_to root_url
 	# end
+  
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:error] = "You do not have access to this page"
+    redirect_to root_url
+  end
 end
