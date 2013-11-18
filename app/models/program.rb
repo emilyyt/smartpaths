@@ -10,5 +10,14 @@ class Program < ActiveRecord::Base
 
   validates_presence_of :institution
   validates_numericality_of :graduating_salary, :only_integer => true, :greater_than_or_equal_to => 0
+  
+  #Returns top five tags for a program. First retrives tags, sorts them. Reverses list so goes in decreasing order then returns first five
+  def tfivetags
+    tag_array = self.tags
+    sort_array = tag_array.sort!{|a,b| a.reputation_for(:votes) <=> b.reputation_for(:votes)}
+    sort_array.reverse!
+    topfive = sort_array.take(5)
+    topfive
+  end
 
 end
