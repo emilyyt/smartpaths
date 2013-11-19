@@ -15,11 +15,11 @@
     <%= f.label :program_id %>
     <%= collection_select :review, :program_id, Program.all, :id, :name, prompt: true%>
   </div>
-  <div class="field">
+  <div class="field"><br/>
     <%= f.label :rating %>
     <%= f.select :rating, [0,1,2,3,4,5] %>
   </div>
-  <div class="field">
+  <div class="field"><br/>
     <%= f.label :text %>
     <%= f.text_area :text %>
   </div>
