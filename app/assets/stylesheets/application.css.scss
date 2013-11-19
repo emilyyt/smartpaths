@@ -52,6 +52,7 @@ body {
 	font-family: $basic-font-family;
 	font-size: 14px;
 	color: #333;
+	min-height: 100%;
 }
 
 h1 {
@@ -239,7 +240,27 @@ h1 {
 	margin: 0;
 	}
 }
+
+.program_review_container {
+	@include rounded-corners(8px);
+	padding: 40px;
+	background-color: #F0F0F0;
+	.program_review {
+		background-color: white;
+		margin-bottom: 20px;
+		margin-right: 40px;
+		display: inline-block;
+		width: 350px;
+		float: right;
+
+	}
+}
 /*Form style*/
+textarea{
+	width: 600px;
+	height: 200px;
+}
+
 label {
 	display: inline-block;
 	padding-right: 10px;
@@ -249,3 +270,21 @@ label {
 	margin-bottom: 15px;
 }
 /* Footer styles */
+
+
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+}
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -40px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+	margin: 0;
+	height: 40px; /* '.push' must be the same height as 'footer' */
+}

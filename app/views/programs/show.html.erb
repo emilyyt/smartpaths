@@ -7,15 +7,19 @@
 </div>
 <div class="program_tags">
 	<div id="tag_label">
-		Tag:
+		Tags:
 	</div>
 	<% for tag in @program.tfivetags%>
-		<ul class="tag_style">
-				<li><%= link_to "", vote_tag_path(tag, type: "down"), method: "post", :class=>"fa fa-thumbs-down"  %></li>
+		<% if @program.tfivetags.length == 0%>
+			<%= None%>
+		<% else%>
+			<ul class="tag_style">
 				<li><%= tag.name%></li>
 			  <li><%= link_to "", vote_tag_path(tag, type: "up"), method: "post", :class=>"fa fa-thumbs-up" %></li>
+			  <li><%= link_to "", vote_tag_path(tag, type: "down"), method: "post", :class=>"fa fa-thumbs-down"  %></li>
 			  <%= pluralize tag.reputation_for(:votes).to_i, "vote" %>
-		</ul>
+			</ul>
+		<%end%>
 	<%end%>
 </div>
 <div class="program_metrics clearfix">
@@ -40,15 +44,23 @@
 	<!-- All standby_images are in one line to remove the implicit white space between inline elements -->
 	<img class="standby_images"src="../assets/cmu-word.jpeg" alt="Program photo"/><img class="standby_images"src="../assets/cmu-word.jpeg" alt="Program photo"/><img class="standby_images"src="../assets/cmu-word.jpeg" alt="Program photo"/><img class="standby_images"src="../assets/cmu-word.jpeg" alt="Program photo"/>
 </div>
-
-<% if logged_in? %>
-	<div>
-		<h3>Reviews</h3>
-		<%= link_to 'Review this program', new_review_path %>
-		<br />
-	</div>
-<% end %>
-
 <div> <%= link_to 'Edit', edit_program_path(@program) %> |
 <%= link_to 'Back', programs_path %>
 </div>
+
+<% if logged_in? %>
+		<h2>Reviews</h2>
+		<div class="program_review_container clearfix">
+			<% for review in @reviews %>
+				<div class="program_review">
+					<%= review.text%>
+					<%= review.rating%>
+					<%= review.user_id%>
+				</div>
+			<% end %>
+		</div>
+
+		<%= link_to 'Review this program', new_review_path %>
+		<br />
+<% end %>
+

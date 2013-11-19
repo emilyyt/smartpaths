@@ -12,6 +12,7 @@ class Program < ActiveRecord::Base
   validates_numericality_of :graduating_salary, :only_integer => true, :greater_than_or_equal_to => 0
   
   scope :for_institution, lambda {|institution| where("institution_id = ?", "#{institution.id}") }
+  # scope :program_reviews, lambda {|review| joins(:reviews).where("review.program_id = ?", review.id)}
 
   #Returns top five tags for a program. First retrives tags, sorts them. Reverses list so goes in decreasing order then returns first five
   def tfivetags
@@ -21,5 +22,6 @@ class Program < ActiveRecord::Base
     topfive = sort_array.take(5)
     topfive
   end
+
 
 end
