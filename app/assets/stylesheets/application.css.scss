@@ -37,6 +37,11 @@ body {
 	color: #333;
 }
 
+h1 {
+	font-size: 32px;
+	margin-bottom: 8px;
+}
+
 .main_background {
 	background-image: url("main_background2.png");
 	background-size: 100%;
@@ -55,17 +60,11 @@ body {
 	content: " ";
 	clear: both;
 	height: 0;
-	}
-
-h2 {
-	margin-top: 30px;
 }
+
 
 /* Header styles */
 
-.navbar{
-	margin-bottom: 0;
-}
 #navbar_style_adj {
 	background-image: none;
 	background-color: $theme-color;
@@ -105,9 +104,10 @@ h2 {
 }
 
 .program_institution_name {
-	font-size: 13px;
+	font-size: 18px;
 	text-transform: uppercase;
 	font-weight: 700;
+	margin-bottom: 20px
 }
 
 .program_metrics{
@@ -202,4 +202,23 @@ h2 {
 	}
 }
 
+.program_tags {
+	#tag_label{
+		font-weight: bold;
+		display: inline-block;
+	}
+	ul, li{
+	display: inline-block;
+	margin: 0;
+	}
+}
+/*Form style*/
+label {
+	display: inline-block;
+	padding-right: 10px;
+}
+
+.field {
+	margin-bottom: 15px;
+}
 /* Footer styles */

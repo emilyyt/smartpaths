@@ -1,9 +1,12 @@
 class ReviewsController < ApplicationController
   # GET /reviews
   # GET /reviews.json
+  before_filter :check_login
+  
   def index
     @reviews = Review.all
-
+    @programs = Program.all
+    @users = User.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @reviews }
@@ -15,6 +18,9 @@ class ReviewsController < ApplicationController
   def show
     @review = Review.find(params[:id])
 
+    @user = User.find(@review.user_id)
+    @program = Program.find(@review.program_id)
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @review }
@@ -25,6 +31,7 @@ class ReviewsController < ApplicationController
   # GET /reviews/new.json
   def new
     @review = Review.new
+#	authorize! :create, @review
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,7 +48,7 @@ class ReviewsController < ApplicationController
   # POST /reviews.json
   def create
     @review = Review.new(params[:review])
-
+    @review.user_id = current_user.id 
     respond_to do |format|
       if @review.save
         format.html { redirect_to @review, notice: 'Review was successfully created.' }

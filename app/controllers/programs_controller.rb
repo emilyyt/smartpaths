@@ -3,7 +3,6 @@ class ProgramsController < ApplicationController
   # GET /programs.json
   def index
     @programs = Program.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @programs }
@@ -15,6 +14,7 @@ class ProgramsController < ApplicationController
   def show
     @program = Program.find(params[:id])
     @institution = Institution.find(@program.institution_id)
+	@reviews = Review.find_by_program_id(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,6 +26,7 @@ class ProgramsController < ApplicationController
   # GET /programs/new.json
   def new
     @program = Program.new
+	authorize! :create, @program
 
     respond_to do |format|
       format.html # new.html.erb
@@ -47,8 +48,8 @@ class ProgramsController < ApplicationController
 
     respond_to do |format|
       if @program.save
-        format.html { redirect_to @program, notice: 'Program was successfully created.' }
-        format.json { head :no_content }
+        format.html { redirect_to @program, notice: "Program was successfully created." }
+        format.json { render json: @program, status: :created, location: @program }
       else
         format.html { render action: "new" }
         format.json { render json: @program.errors, status: :unprocessable_entity }

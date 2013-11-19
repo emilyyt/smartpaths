@@ -1,6 +1,6 @@
 require 'bcrypt'
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :password_confirmation
+  attr_accessible :email, :password, :password_confirmation, :role
   include BCrypt
   attr_accessor :password #<---- why is this here if in the schema, there's no password?
   before_save :encrypt_password
@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   #Relationships
   has_many :user_tags
   has_many :user_programs
+  has_many :reviews
   has_many :program_tags, :through => :user_programs
   has_many :tags, :through => :user_tags
   
@@ -28,8 +29,8 @@ class User < ActiveRecord::Base
   ROLES = [['User', :user],['Admin', :admin]]
 
   def role?(authorized_role)
-    return false if role.nil?
-    role.downcase.to_sym == authorized_role
+    return false if self.role.nil?
+    self.role.downcase.to_sym == authorized_role
   end
   
   def is_admin?
@@ -74,6 +75,6 @@ class User < ActiveRecord::Base
       self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
     end
   end
+  
 end
-
 
