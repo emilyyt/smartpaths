@@ -10,6 +10,7 @@
  *
  *= require reset
  *= require bootstrap.min
+ *= require font-awesome
  *= require_self
  */
 
@@ -27,6 +28,22 @@ $program-metrics-line-height: 2.3;
 	-moz-border-radius: $radius; 
 	-webkit-border-radius: $radius;  
 
+}
+@mixin gradient($from, $to) {
+  /* fallback/image non-cover color */
+  background-color: $from;
+ 
+  /* Firefox 3.6+ */
+  background-image: -moz-linear-gradient($from, $to);
+ 
+  /* Safari 4+, Chrome 1+ */
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+ 
+  /* Safari 5.1+, Chrome 10+ */
+  background-image: -webkit-linear-gradient($from, $to);
+ 
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient($from, $to);
 }
 
 /* generic styles */
@@ -123,7 +140,7 @@ h1 {
 		line-height: $program-metrics-line-height;
 	}
 	.program_general_stats li{
-		line-height: $program-metrics-line-height * 1.7;
+		line-height: $program-metrics-line-height * 0.8;
 	}
 }
 
@@ -131,9 +148,10 @@ h1 {
 
 .program_general_stats {
 	float: left;
-	span {
+	div {
 	color: $theme-color;
-	font-size: 18px;
+	font-size: 22px;
+	text-align: center;
 	}	
 }
 
@@ -206,6 +224,15 @@ h1 {
 	#tag_label{
 		font-weight: bold;
 		display: inline-block;
+	}
+	.tag_style{
+		@include rounded-corners(5px);
+		border: 1px solid silver;
+		padding-left: 10px;
+		padding-right: 10px;
+		@include gradient(#ffffeb,#FFFFC2);
+		margin-right: 3px;
+		margin-left: 3px;
 	}
 	ul, li{
 	display: inline-block;
