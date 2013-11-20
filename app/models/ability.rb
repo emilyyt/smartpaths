@@ -34,6 +34,7 @@ class Ability
 		can :delete, UserTag do |t|
 			t.user_id == user.id
 		end
+		can :create, ProgramTag
     else
       # guests can read programs
       can :read, Program

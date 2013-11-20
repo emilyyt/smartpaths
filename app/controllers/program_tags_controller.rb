@@ -1,6 +1,8 @@
 class ProgramTagsController < ApplicationController
   # GET /program_tags
   # GET /program_tags.json
+  load_and_authorize_resource
+  
   def index
     @program_tags = ProgramTag.all
 
