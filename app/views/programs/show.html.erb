@@ -7,24 +7,27 @@
 </div>
 <div class="program_tags">
 	<div id="tag_label">
-		Tag:
+		Tags:
 	</div>
-	<ul>
-			<% for tag in @program.tfivetags%>
-			<li><%= tag.name%></li>
-			<%= pluralize tag.reputation_for(:votes).to_i, "vote" %>
-		  <li><%= link_to "up", vote_tag_path(tag, type: "up"), method: "post" %></li>
-			<li><%= link_to "down", vote_tag_path(tag, type: "down"), method: "post" %></li>
-			<%end%>
-	</ul>
+	<% for tag in @program.tfivetags%>
+		<% if @program.tfivetags.length == 0%>
+			<%= None%>
+		<% else%>
+			<ul class="tag_style">
+				<li><%= tag.name%></li>
+			  <li><%= link_to "", vote_tag_path(tag, type: "up"), method: "post", :class=>"fa fa-thumbs-up" %></li>
+			  <%= pluralize tag.reputation_for(:votes).to_i, "votes" %>
+			</ul>
+		<%end%>
+	<%end%>
 </div>
 <div class="program_metrics clearfix">
 	<ul class="program_general_stats">
-		<li>2013 Program Tuition: <span>$56,000</span></li>
+		<li>2013 Program Tuition: <div>$56,000</div></li>
 		<li><b>Graduating salary: </b>
-		  <span>$<%= number_with_delimiter(@program.graduating_salary, :delimiter => ',') %></span></li>
-		<li>Selectivity:  <span>Very Selective</span> </li>
-		<li>Student : Faculty Ratio  <span>10 : 1</span></li>
+		  <div>$<%= number_with_delimiter(@program.graduating_salary, :delimiter => ',') %></div></li>
+		<li>Selectivity:  <div>Very Selective</div> </li>
+		<li>Student : Faculty Ratio  <div>10 : 1</div></li>
 	</ul>
 	<ul class="program_rating_stats">
 		<li><span id="overall_rating">Overall Rating</span><div class="star_rating_yellow"></div></li>
@@ -40,15 +43,22 @@
 	<!-- All standby_images are in one line to remove the implicit white space between inline elements -->
 	<img class="standby_images"src="../assets/cmu-word.jpeg" alt="Program photo"/><img class="standby_images"src="../assets/cmu-word.jpeg" alt="Program photo"/><img class="standby_images"src="../assets/cmu-word.jpeg" alt="Program photo"/><img class="standby_images"src="../assets/cmu-word.jpeg" alt="Program photo"/>
 </div>
-
-<% if logged_in? %>
-	<div>
-		<h3>Reviews</h3>
-		<%= link_to 'Review this program', new_review_path %>
-		<br />
-	</div>
-<% end %>
-
 <div> <%= link_to 'Edit', edit_program_path(@program) %> |
 <%= link_to 'Back', programs_path %>
 </div>
+
+<% if logged_in? %>
+		<h2>Reviews</h2>
+		<div class="program_review_container clearfix">
+			<% for review in @reviews %>
+				<div class="program_review">
+					<%= review.text%>
+					<%= review.rating%>
+				</div>
+			<% end %>
+		</div>
+
+		<%= link_to 'Review this program', new_review_path %>
+		<br />
+<% end %>
+

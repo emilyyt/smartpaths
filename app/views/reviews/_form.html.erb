@@ -12,19 +12,19 @@
   <% end %>
 
   <div class="field"><br/>
-    <%= f.label :program_id %>
+    <%= f.label :program_id %><br/>
     <%= collection_select :review, :program_id, Program.all, :id, :name, prompt: true%>
   </div>
-  <div class="field">
-    <%= f.label :rating %>
+  <div class="field"><br/>
+    <%= f.label "Overall Rating" %><br/>
     <%= f.select :rating, [0,1,2,3,4,5] %>
   </div>
-  <div class="field">
-    <%= f.label :text %>
+  <div class="field"><br/>
+    <%= f.label "What are some things you want to tell future students of the program?" %><br/>
     <%= f.text_area :text %>
   </div>
   <%= f.hidden_field :user_id %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit nil, :class => 'btn btn-info' %>
   </div>
 <% end %>

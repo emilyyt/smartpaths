@@ -12,11 +12,14 @@ gem 'bcrypt-ruby', :require => "bcrypt"
 gem 'cancan'
 gem 'coderay'
 gem 'activerecord-reputation-system', require: 'reputation_system'
+gem 'font-awesome-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development do
     gem 'sqlite3'
+    gem 'populator3'
+    gem 'faker'
 end
 
 group :development do

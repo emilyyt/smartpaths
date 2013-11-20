@@ -12,14 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label :name %></br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :tag_type %>
+    <%= f.label :tag_type %></br>
     <%= f.select :tag_type, ['Skill'] %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit nil, :class => 'btn btn-info' %>
   </div>
 <% end %>

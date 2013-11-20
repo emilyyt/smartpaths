@@ -54,6 +54,10 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.2)
+    faker (1.1.2)
+      i18n (~> 0.5)
+    font-awesome-rails (4.0.3.0)
+      railties (>= 3.2, < 5.0)
     hike (1.2.3)
     i18n (0.6.5)
     journey (1.0.4)
@@ -69,6 +73,7 @@ GEM
     multi_json (1.8.2)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
+    populator3 (0.2.7)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -136,7 +141,10 @@ DEPENDENCIES
   coderay
   coffee-rails (~> 3.2.1)
   devise
+  faker
+  font-awesome-rails
   jquery-rails
+  populator3
   rails (= 3.2.9)
   sass
   sass-rails (~> 3.2.3)

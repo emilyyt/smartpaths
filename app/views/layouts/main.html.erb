@@ -9,14 +9,17 @@
 </head>
 
 <body class="main_background">
-		<%= render :partial => 'partials/header'%>
-	 	<div class="container">
-	  	<div class="row">
-	  		<div class="span12">
-	 				<%= yield %>
-	 			</div>
-	 		</div>
-	 	</div>
+	  <div class="wrapper">
+			<%= render :partial => 'partials/header'%>
+		 	<div class="container">
+		  	<div class="row">
+		  		<div class="span12">
+		 				<%= yield %>
+		 			</div>
+		 		</div>
+		 		<div class="push"></div>
+		 	</div>
+	 </div>
 		<%= render :partial => 'partials/footer'%>
 </body>
 </html>

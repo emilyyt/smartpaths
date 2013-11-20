@@ -10,6 +10,7 @@
  *
  *= require reset
  *= require bootstrap.min
+ *= require font-awesome
  *= require_self
  */
 
@@ -28,13 +29,32 @@ $program-metrics-line-height: 2.3;
 	-webkit-border-radius: $radius;  
 
 }
-
+@mixin gradient($from, $to) {
+  /* fallback/image non-cover color */
+  background-color: $from;
+ 
+  /* Firefox 3.6+ */
+  background-image: -moz-linear-gradient($from, $to);
+ 
+  /* Safari 4+, Chrome 1+ */
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+ 
+  /* Safari 5.1+, Chrome 10+ */
+  background-image: -webkit-linear-gradient($from, $to);
+ 
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient($from, $to);
+}
+@mixin star($rating, $height){
+	background-position: 0px (10 - 2 * $rating) *  - $height + px;
+}
 /* generic styles */
 body {
 	background-color: white;
 	font-family: $basic-font-family;
 	font-size: 14px;
 	color: #333;
+	min-height: 100%;
 }
 
 h1 {
@@ -123,7 +143,7 @@ h1 {
 		line-height: $program-metrics-line-height;
 	}
 	.program_general_stats li{
-		line-height: $program-metrics-line-height * 1.7;
+		line-height: $program-metrics-line-height * 0.8;
 	}
 }
 
@@ -131,9 +151,10 @@ h1 {
 
 .program_general_stats {
 	float: left;
-	span {
+	div {
 	color: $theme-color;
-	font-size: 18px;
+	font-size: 22px;
+	text-align: center;
 	}	
 }
 
@@ -146,7 +167,7 @@ h1 {
 		color: #535353;
 	}
 	.star_rating_yellow {
-		background-position: 0px 0px;
+		@include star(3.5, 45.5);
 		background-repeat: no-repeat;
 		width: 240px;
 		height: 42px;
@@ -154,31 +175,30 @@ h1 {
 		background-image: url("../../assets/stars-yellow.png");
 	}
 	.star_rating_blue {
-		background-position: 0px 0px;
+		@include star(2.5, 26.6);
 		background-repeat: no-repeat;
 		width: 240px;
 		height: 24px;
-		background-size: 55%;
+		background-size: 55.5%;
 		background-image: url("../../assets/stars-blue.png");
-
 	}
+	
 	.star_rating_green {
-		background-position: 0px 0px;
+		@include star(4.5, 26.3);
 		background-repeat: no-repeat;
 		width: 240px;
-		height: 24px;
+		height: 25px;
 		background-size: 55%;
 		background-image: url("../../assets/stars-green.png");
-
 	}
+
 	.star_rating_red {
-		background-position: 0px 0px;
+		@include star(2, 26.6);
 		background-repeat: no-repeat;
 		width: 240px;
 		height: 24px;
-		background-size: 55%;
+		background-size: 55.5%;
 		background-image: url("../../assets/stars-red.png");
-
 	}
 }
 
@@ -207,12 +227,41 @@ h1 {
 		font-weight: bold;
 		display: inline-block;
 	}
+	.tag_style{
+		@include rounded-corners(5px);
+		border: 1px solid silver;
+		padding-left: 10px;
+		padding-right: 10px;
+		@include gradient(#ffffeb,#FFFFC2);
+		margin-right: 3px;
+		margin-left: 3px;
+	}
 	ul, li{
 	display: inline-block;
 	margin: 0;
 	}
 }
+
+.program_review_container {
+	@include rounded-corners(8px);
+	padding: 40px;
+	background-color: #F0F0F0;
+	.program_review {
+		background-color: white;
+		margin-bottom: 20px;
+		margin-right: 40px;
+		display: inline-block;
+		width: 350px;
+		padding: 15px;
+
+	}
+}
 /*Form style*/
+textarea{
+	width: 600px;
+	height: 200px;
+}
+
 label {
 	display: inline-block;
 	padding-right: 10px;
@@ -222,3 +271,21 @@ label {
 	margin-bottom: 15px;
 }
 /* Footer styles */
+
+
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+}
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -40px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+	margin: 0;
+	height: 40px; /* '.push' must be the same height as 'footer' */
+}

@@ -16,8 +16,8 @@ class ProgramsController < ApplicationController
   def show
     @program = Program.find(params[:id])
     @institution = Institution.find(@program.institution_id)
-	@reviews = Review.find_by_program_id(params[:id])
-
+	  @reviews = Program.find(params[:id]).reviews
+    # @reviews = Review.program_reviews(:id)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @program }
