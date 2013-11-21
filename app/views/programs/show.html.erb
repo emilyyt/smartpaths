@@ -30,7 +30,9 @@
 		<li>Student : Faculty Ratio  <div>10 : 1</div></li>
 	</ul>
 	<ul class="program_rating_stats">
-		<li><span id="overall_rating">Overall Rating</span><div class="star_rating_yellow"></div></li>
+		<li><span id="overall_rating">Overall Rating</span><div class="star_rating_yellow">
+			<%= rating_for @program, "personal_value" %>
+		</div></li>
 		<li>Personal Value
 		  <div class="star_rating_red"></div></li>
 		<li>Academics <div class="star_rating_blue"></div> </li>

@@ -1,5 +1,7 @@
 Smartpaths::Application.routes.draw do
 
+  match '/rate' => 'rater#create', :as => 'rate'
+
   get "home/index"
   
   get "log_out" => "sessions#destroy", :as => "log_out"
