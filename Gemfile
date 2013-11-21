@@ -21,6 +21,7 @@ group :development do
     gem 'pg'
     gem 'populator3'
     gem 'faker'
+    gem 'pg'
 end
 
 group :development do

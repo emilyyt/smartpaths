@@ -453,6 +453,13 @@ namespace :db do
   
   
   #Step 6: Add Tags
+  #Add tags from CSV filerake
+ # CSV.foreach(File.path("cip.csv")) do |col|
+  #  tag = Tag.new
+ #   tag.name = col[0]
+ #   tag.tag_type = "Skill"
+ #   tag.save!
+ # end  
   
   t1 = Tag.new
   t1.name = "Design"
