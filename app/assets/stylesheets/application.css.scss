@@ -45,7 +45,9 @@ $program-metrics-line-height: 2.3;
   /* Opera 11.10+ */
   background-image: -o-linear-gradient($from, $to);
 }
-
+@mixin star($rating, $height){
+	background-position: 0px (10 - 2 * $rating) *  - $height + px;
+}
 /* generic styles */
 body {
 	background-color: white;
@@ -165,7 +167,7 @@ h1 {
 		color: #535353;
 	}
 	.star_rating_yellow {
-		background-position: 0px 0px;
+		@include star(3.5, 45.5);
 		background-repeat: no-repeat;
 		width: 240px;
 		height: 42px;
@@ -173,31 +175,30 @@ h1 {
 		background-image: url("../../assets/stars-yellow.png");
 	}
 	.star_rating_blue {
-		background-position: 0px 0px;
+		@include star(2.5, 26.6);
 		background-repeat: no-repeat;
 		width: 240px;
 		height: 24px;
-		background-size: 55%;
+		background-size: 55.5%;
 		background-image: url("../../assets/stars-blue.png");
-
 	}
+	
 	.star_rating_green {
-		background-position: 0px 0px;
+		@include star(4.5, 26.3);
 		background-repeat: no-repeat;
 		width: 240px;
-		height: 24px;
+		height: 25px;
 		background-size: 55%;
 		background-image: url("../../assets/stars-green.png");
-
 	}
+
 	.star_rating_red {
-		background-position: 0px 0px;
+		@include star(2, 26.6);
 		background-repeat: no-repeat;
 		width: 240px;
 		height: 24px;
-		background-size: 55%;
+		background-size: 55.5%;
 		background-image: url("../../assets/stars-red.png");
-
 	}
 }
 
@@ -251,7 +252,7 @@ h1 {
 		margin-right: 40px;
 		display: inline-block;
 		width: 350px;
-		float: right;
+		padding: 15px;
 
 	}
 }
