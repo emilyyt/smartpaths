@@ -363,91 +363,91 @@ namespace :db do
   up1 = UserProgram.new
   up1.user_id = mt.id
   up1.program_id = i1.id 
-  up1.graduating_year = 2014-01-05
+  up1.graduating_year = "2014-01-05"
   up1.save!
   
   up2 = UserProgram.new
   up2.user_id = bs.id
   up2.program_id = i1.id 
-  up2.graduating_year = 2014-01-05
+  up2.graduating_year = "2014-01-05"
   up2.save!
   
   up3 = UserProgram.new
   up3.user_id = js.id
   up3.program_id = i1.id 
-  up3.graduating_year = 2014-01-05
+  up3.graduating_year = "2014-01-05"
   up3.save!
   
   up4 = UserProgram.new
   up4.user_id = et.id
   up4.program_id = i2.id 
-  up4.graduating_year = 2014-01-05
+  up4.graduating_year = "2014-01-05"
   up4.save!
   
   up5 = UserProgram.new
   up5.user_id = ti.id
   up5.program_id = i2.id 
-  up5.graduating_year = 2014-01-05
+  up5.graduating_year = "2014-01-05"
   up5.save!
   
   up6 = UserProgram.new
   up6.user_id = mh.id
   up6.program_id = i2.id 
-  up6.graduating_year = 2014-01-05
+  up6.graduating_year = "2014-01-05"
   up6.save!
   
   up7 = UserProgram.new
   up7.user_id = rw.id
   up7.program_id = i3.id 
-  up7.graduating_year = 2014-01-05
+  up7.graduating_year = "2014-01-05"
   up7.save!
   
   up8 = UserProgram.new
   up8.user_id = fs.id
   up8.program_id = i3.id 
-  up8.graduating_year = 2014-01-05
+  up8.graduating_year = "2014-01-05"
   up8.save!
   
   up9 = UserProgram.new
   up9.user_id = es.id
   up9.program_id = i3.id 
-  up9.graduating_year = 2014-01-05
+  up9.graduating_year = "2014-01-05"
   up9.save!
   
   up10 = UserProgram.new
   up10.user_id = hs.id
   up10.program_id = i4.id 
-  up10.graduating_year = 2014-01-05
+  up10.graduating_year = "2014-01-05"
   up10.save!
   
   up11 = UserProgram.new
   up11.user_id = ds.id
   up11.program_id = i4.id 
-  up11.graduating_year = 2014-01-05
+  up11.graduating_year = "2014-01-05"
   up11.save!
   
   up12 = UserProgram.new
   up12.user_id = cs.id
   up12.program_id = i4.id 
-  up12.graduating_year = 2014-01-05
+  up12.graduating_year = "2014-01-05"
   up12.save!
   
   up13 = UserProgram.new
   up13.user_id = as.id
   up13.program_id = i5.id 
-  up13.graduating_year = 2014-01-05
+  up13.graduating_year = "2014-01-05"
   up13.save!
   
   up14 = UserProgram.new
   up14.user_id = gs.id
   up14.program_id = i5.id 
-  up14.graduating_year = 2014-01-05
+  up14.graduating_year = "2014-01-05"
   up14.save!
   
   up15 = UserProgram.new
   up15.user_id = sp.id
   up15.program_id = i5.id 
-  up15.graduating_year = 2014-01-05
+  up15.graduating_year = "2014-01-05"
   up15.save!
   
   

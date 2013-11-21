@@ -13,11 +13,12 @@ gem 'cancan'
 gem 'coderay'
 gem 'activerecord-reputation-system', require: 'reputation_system'
 gem 'font-awesome-rails'
+gem 'pg'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development do
-    gem 'sqlite3'
+    gem 'pg'
     gem 'populator3'
     gem 'faker'
 end
@@ -27,7 +28,7 @@ group :development do
 end
 
 group :production do
-    # gem 'pg'
+    gem 'pg'
 end
 
 
