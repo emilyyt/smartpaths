@@ -1,3 +1,8 @@
 <div class="home_heading">
 	<h1>Smart<span> Paths</span></h1>
+	<br></br>
+	<%= form_tag("/search", :method => "get") do %>
+    	  <%= text_field_tag('query', nil, :placeholder => "type in one or more tags...")%>
+    	  <%= submit_tag('Submit')%>
+    <% end %>
 </div>
