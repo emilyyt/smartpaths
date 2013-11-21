@@ -3,4 +3,7 @@ class Review < ActiveRecord::Base
   #Relationship
   belongs_to :program
   belongs_to :user
+
+  #finds all the reviews with the same program_id. this scope doesn't work quite right.
+  scope :program_reviews, lambda {|review| joins(:program).where("review.program_id = ?", :id)}
 end

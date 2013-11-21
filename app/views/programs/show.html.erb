@@ -16,8 +16,7 @@
 			<ul class="tag_style">
 				<li><%= tag.name%></li>
 			  <li><%= link_to "", vote_tag_path(tag, type: "up"), method: "post", :class=>"fa fa-thumbs-up" %></li>
-			  <li><%= link_to "", vote_tag_path(tag, type: "down"), method: "post", :class=>"fa fa-thumbs-down"  %></li>
-			  <%= pluralize tag.reputation_for(:votes).to_i, "vote" %>
+			  <%= pluralize tag.reputation_for(:votes).to_i, "votes" %>
 			</ul>
 		<%end%>
 	<%end%>
@@ -55,7 +54,6 @@
 				<div class="program_review">
 					<%= review.text%>
 					<%= review.rating%>
-					<%= review.user_id%>
 				</div>
 			<% end %>
 		</div>
