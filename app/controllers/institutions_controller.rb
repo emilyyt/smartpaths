@@ -1,6 +1,8 @@
 class InstitutionsController < ApplicationController
   # GET /institutions
   # GET /institutions.json
+  load_and_authorize_resource
+  
   def index
     @institutions = Institution.all
 
@@ -14,6 +16,7 @@ class InstitutionsController < ApplicationController
   # GET /institutions/1.json
   def show
     @institution = Institution.find(params[:id])
+	@programs = Program.for_inst(@institution.id).by_rating
 
     respond_to do |format|
       format.html # show.html.erb

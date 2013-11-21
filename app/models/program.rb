@@ -11,8 +11,10 @@ class Program < ActiveRecord::Base
   validates_presence_of :institution
   validates_numericality_of :graduating_salary, :only_integer => true, :greater_than_or_equal_to => 0
   
-  scope :for_institution, lambda {|institution| where("institution_id = ?", "#{institution.id}") }
-
+  scope :for_inst, lambda {|institution_id| where("institution_id = ?", institution_id) }
+  scope :by_salary, order('graduating_salary')
+  scope :alphabetical, order('name')
+  scope :by_rating, joins(:reviews).group(:program_id).order('rating')
 
   #Returns top five tags for a program. First retrives tags, sorts them. Reverses list so goes in decreasing order then returns first five
   def tfivetags
