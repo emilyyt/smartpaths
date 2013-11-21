@@ -31,7 +31,7 @@ class Ability
 		can :delete, Review do |review|
 			review.user_id == user.id
 		end
-		can :delete, UserTag do |t|
+		can :manage, UserTag do |t|
 			t.user_id == user.id
 		end
 		can :create, ProgramTag
