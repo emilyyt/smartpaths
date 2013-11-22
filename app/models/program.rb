@@ -14,7 +14,7 @@ class Program < ActiveRecord::Base
   scope :for_inst, lambda {|institution_id| where("institution_id = ?", institution_id) }
   scope :by_salary, order('graduating_salary')
   scope :alphabetical, order('name')
-  scope :by_rating, joins(:reviews).group(:program_id).order('rating')
+  # scope :by_rating, joins(:reviews).group(:program_id).order('rating')
 
   #Returns top five tags for a program. First retrives tags, sorts them. Reverses list so goes in decreasing order then returns first five
   def tfivetags
