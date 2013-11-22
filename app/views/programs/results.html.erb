@@ -1,5 +1,13 @@
-<ul>
+
+
+<table class="table">
+	<tr>
+    <th>Program Name</th>
+    </tr>
+
 	<% @programs.each do |program| %>
-		<li><%= program %></li>
+	<tr>
+		<td><%= program %></td>
+	</tr>
 	<% end %>
-</ul>
+</table>
