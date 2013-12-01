@@ -1,7 +1,9 @@
+<div> <%= link_to 'Edit', edit_program_path(@program) %> |
+<%= link_to 'Back', programs_path %>
+</div>
 <h1>
   <%= @program.name %>
 </h1>
-
 <div class="program_institution_name">
 	<%= link_to @institution.name, institution_path(@institution) %>
 </div>
@@ -58,9 +60,6 @@
 	<!-- All standby_images are in one line to remove the implicit white space between inline elements -->
 	<img class="standby_images"src="../assets/cmu-word.jpeg" alt="Program photo"/><img class="standby_images"src="../assets/cmu-word.jpeg" alt="Program photo"/><img class="standby_images"src="../assets/cmu-word.jpeg" alt="Program photo"/><img class="standby_images"src="../assets/cmu-word.jpeg" alt="Program photo"/>
 </div>
-<div> <%= link_to 'Edit', edit_program_path(@program) %> |
-<%= link_to 'Back', programs_path %>
-</div>
 
 <% if logged_in? %>
 		<h2>Reviews</h2>
@@ -68,12 +67,13 @@
 			<% for review in @reviews %>
 				<div class="program_review">
 					<%= review.text%>
-					<%= review.rating%>
+					<div class="yellow_star_<%= review.rating%>" id="star_push_right">
+					</div>
 				</div>
+				&nbsp;&nbsp;&nbsp;
 			<% end %>
+			<div> <%= link_to 'Review this program', new_review_path %></div>
 		</div>
-
-		<%= link_to 'Review this program', new_review_path %>
 		<br />
 <% end %>
 

@@ -42,6 +42,9 @@ Smartpaths::Application.routes.draw do
   match '/feedback', :to => 'home#feedback'
   match '/contact', :to => 'home#contact'
 
+  get '/search' => "search#search", :as => "search"
+  get "/results" => "programs#results", :as => "results"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
