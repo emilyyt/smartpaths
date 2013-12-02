@@ -20,7 +20,7 @@
 $basic-font-family: 'Lato','Helvetica Neue', Helvetica, Arial, sans-serif;
 $theme-color: green;
 $program-metrics-line-height: 2.3;
-$home-section-height: 500px;
+$home-section-height: 550px;
 
 /* Sass mixins */
 
@@ -85,32 +85,22 @@ h1 {
 
 /*Homepage Styles*/
 
-/*.heading_box {
-	background-color: #111;
-	opacity: 0.8;
-	height: 50px;
-}*/
 .main_background {
-	background-color: #fff;
+	background-color: #fffffa;
 }
 .search_background {
-/*	background-color: #E8E8E8;*/
 	height: $home-section-height;
 	background-image: url("../../assets/home-professions.png");
-/*	background-image: url("../../assets/engineer.jpg");*/
+	background-repeat: no-repeat;
+	background-position: 0 -20px;
 	background-size: 100%;
 }
 .info {
 	background-color: gray;
 	height: $home-section-height;
 }
-
-.carousel-inner img {
-	height: 100%;
-}
-
-#myCarousel {
-	display: inline-block;
+#search_field_position {
+	margin-bottom: 0;
 }
 
 /* Header styles */
@@ -138,7 +128,7 @@ h1 {
 /* Main content styles */
 
 .home_heading{
-	margin-top: 14%;
+	margin-top: 18%;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
