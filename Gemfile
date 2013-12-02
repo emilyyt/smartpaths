@@ -6,6 +6,7 @@ gem 'rails', '3.2.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'simple_form'
+gem 'nested_form'
 gem 'will_paginate'
 gem 'devise'
 gem 'bcrypt-ruby', :require => "bcrypt"

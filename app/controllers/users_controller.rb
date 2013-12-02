@@ -6,12 +6,27 @@ class UsersController < ApplicationController
   
   def new
     @user = User.new
+	@user.user_programs.build
+#	reviews = @user.reviews.build
   end
 
   def create
     @user = User.new(params[:user])
+	up = UserProgram.new(params[:user_programs])
+	[up].each do |u|
+		u.user_id = @user.id
+	end
+#	reviews = Review.new(params[:reviews])
+#	[ups].each do |u|
+#		u.user_id = @user.id
+#	end
+#	[reviews].each do |r|
+#	end
+	
     if @user.save
-      redirect_to root_url, :notice => "Signed up!"
+	  redirect_to root_url, :notice => "Signed up!"
+#	  link = "<%= link_to 'here', # %>"
+#	  redirect_to root_url, :notice => "Signed up! Fill out your first review #{link}."
     else
       render "new"
     end
