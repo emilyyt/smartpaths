@@ -20,7 +20,7 @@
 $basic-font-family: 'Lato','Helvetica Neue', Helvetica, Arial, sans-serif;
 $theme-color: green;
 $program-metrics-line-height: 2.3;
-$home-section-height: 550px;
+$home-section-height: 600px;
 
 /* Sass mixins */
 
@@ -101,6 +101,7 @@ h1 {
 }
 #search_field_position {
 	margin-bottom: 0;
+	width: 300px;
 }
 
 /* Header styles */
@@ -118,7 +119,7 @@ h1 {
 	font-size: 25px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-}
+	}
 }
 
 .navbar-inner .brand, .navbar #navbar_links li a {
@@ -176,8 +177,6 @@ h1 {
 		line-height: $program-metrics-line-height * 0.8;
 	}
 }
-
-
 
 .program_general_stats {
 	float: left;
