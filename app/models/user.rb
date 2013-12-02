@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :program_tags, :through => :user_programs
   has_many :tags, :through => :user_tags
   
-#  accepts_nested_attributes_for :reviews
+  accepts_nested_attributes_for :reviews, :allow_destroy => true
   accepts_nested_attributes_for :user_programs, :allow_destroy => true
 
   

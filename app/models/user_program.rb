@@ -1,6 +1,6 @@
 class UserProgram < ActiveRecord::Base
-  attr_accessible :graduating_year, :program_tag_id, :user_id
+  attr_accessible :graduating_year, :user_id, :program_id
   #Relationships
-  belongs_to :program
+  has_one :program
   belongs_to :user
 end

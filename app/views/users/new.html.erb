@@ -26,16 +26,27 @@
   
   <%= f.fields_for :user_programs do |u| %>
 	  <p>
-		<%= u.label "Which program did you attend?" %>
-		<%= collection_select :user_program, :program_id, Program.all, :id, :name, prompt: true %>
+		<%= u.label "Select a program you've attended:" %>
+		<%= u.collection_select :program_id, Program.all, :id, :name_with_institution, prompt: true %>
 	  </p>
 	  <p>
-		<%= u.label "What year did you graduate from this program?" %>
+		<%= u.label "What year did/will you graduate from this program?" %>
 		<%= u.select :graduating_year, (1975..2017) %>
 	  </p>
-	  <%= u.hidden_field :user_id %>
+<!--	  <%= u.hidden_field :user_id %> -->
+	  <%= f.fields_for :reviews do |r| %>
+		<p>
+			<%= r.label "How would you rate this program overall?" %><br/>
+			<%= r.select :rating, [1,2,3,4,5] %>
+		</p>
+		<p>
+		    <%= r.label "What are some things you'd like to tell future students of the program?" %><br/>
+			<%= r.text_area :text %>
+		</p>
+			<%= r.hidden_field :program_id, :value => Program.all[0].id %>
+	  <% end %>
   <% end %>
-  <p><%= f.link_to_add "Add another program you've attended", :user_programs %></p>
+<!--  <p><%= f.link_to_add "Add another program you've attended", :user_programs %></p> -->
 
   <p class="button"><%= f.submit %></p>
 <% end %>
