@@ -1,6 +1,8 @@
 class InstitutionsController < ApplicationController
   # GET /institutions
   # GET /institutions.json
+  load_and_authorize_resource
+  
   def index
     @institutions = Institution.all
 

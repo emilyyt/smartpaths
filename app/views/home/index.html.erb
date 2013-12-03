@@ -4,22 +4,7 @@
     </div>
 	<br></br>
 		<%= form_tag("/search", :method => "get") do %>
-    	  <%= text_field_tag('query', nil, :placeholder => "type in one or more tags...")%>
-    	  <%= submit_tag('Submit')%>
+    	  <%= text_field_tag('query', nil, :placeholder => "type in one or more tags...", :id => 'search_field_position')%>
+    	  <%= submit_tag 'Submit', :class => 'btn btn-info'%>
     <% end %>
 </div>
-<!-- <div id="myCarousel" class="carousel slide">
-	<ol class="carousel-indicators">
-		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-		<li data-target="#myCarousel" data-slide-to="1"></li>
-	</ol>
-	<div class="carousel-inner">
-			<div class="active item">
-				<img src="../../assets/engineer.jpg">
-			</div>
-			<div class="item">
-				<img src="../../assets/home-professions.png"></div>
-	</div>
-	<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-	<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-</div> -->
