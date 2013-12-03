@@ -14,6 +14,7 @@ class InstitutionsController < ApplicationController
   # GET /institutions/1.json
   def show
     @institution = Institution.find(params[:id])
+	@programs = Program.for_institution(@institution)
 
     respond_to do |format|
       format.html # show.html.erb

@@ -1,6 +1,8 @@
 class ProgramsController < ApplicationController
   # GET /programs
   # GET /programs.json
+  
+  load_and_authorize_resource
   def index
     @programs = Program.all
     respond_to do |format|
