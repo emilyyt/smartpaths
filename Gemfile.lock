@@ -146,8 +146,8 @@ DEPENDENCIES
   faker
   font-awesome-rails
   jquery-rails
-  nested_form
   letsrate
+  nested_form
   pg
   populator3
   rails (= 3.2.9)

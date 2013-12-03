@@ -13,7 +13,7 @@
 
 <% @reviews.each do |review| %>
   <tr>
-    <td><%= review.program %></td> 
+    <td><%= review.program.name %></td> 
     <td><%= review.rating %></td>
     <td><%= review.text %></td>
     <td><%= review.user.email %></td>
