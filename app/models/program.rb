@@ -14,6 +14,10 @@ class Program < ActiveRecord::Base
   scope :for_institution, lambda {|institution| where("institution_id = ?", "#{institution.id}") }
   letsrate_rateable "personal_value", "academics", "jobs", "overall_value"
 
+  def name_with_institution
+	"#{name} @ #{Institution.find(institution_id).name}"
+  end
+  
   #Returns top five tags for a program. First retrives tags, sorts them. Reverses list so goes in decreasing order then returns first five
   def tfivetags
     tag_array = self.tags

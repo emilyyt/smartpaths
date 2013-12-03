@@ -1,6 +1,6 @@
 require 'bcrypt'
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :password_confirmation, :role
+  attr_accessible :email, :password, :password_confirmation, :role, :reviews_attributes, :user_programs_attributes
   include BCrypt
   attr_accessor :password #<---- why is this here if in the schema, there's no password?
   before_save :encrypt_password
@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
   has_many :reviews
   has_many :program_tags, :through => :user_programs
   has_many :tags, :through => :user_tags
+  
+  accepts_nested_attributes_for :reviews, :allow_destroy => true
+  accepts_nested_attributes_for :user_programs, :allow_destroy => true
+
   
   #Scopes
   scope :alphabetical, order('last_name, first_name')
