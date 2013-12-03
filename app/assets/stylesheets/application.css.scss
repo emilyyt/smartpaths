@@ -101,7 +101,7 @@ h1 {
 	height: $home-section-height;
 	background-image: url("../../assets/home-professions.png");
 	background-repeat: no-repeat;
-	background-position: -55px -20px;
+	background-position: -48px -20px;
 	background-size: 112%;
 }
 .info {
@@ -298,6 +298,14 @@ h1 {
 	}
 }
 
+.program_link {
+	font-size: 22px;
+}
+
+#program_institution_link {
+	display: block;
+	color: #666;
+}
 /*Form style*/
 textarea{
 	width: 600px;

@@ -3,7 +3,7 @@
 <table class="table">
   <tr>
     <th>Name</th>
-    <th>Institution</th>
+<!--     <th>Institution</th> -->
     <th>Graduating salary</th>
     <th>Edit</th>
     <th>Destroy</th>
@@ -11,8 +11,7 @@
 
 <% @programs.each do |program| %>
   <tr>
-    <td><%= link_to program.name, program %></td>
-    <td><%= link_to program.institution.name, program.institution %></td>
+    <td><%= link_to program.name, program, :class => 'program_link' %> <%= link_to program.institution.name, program.institution, :id => 'program_institution_link' %></td>
     <td>$<%= number_with_delimiter(program.graduating_salary, :delimiter => ',') %></td>
     <td><%= link_to 'Edit', edit_program_path(program) %></td>
     <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
