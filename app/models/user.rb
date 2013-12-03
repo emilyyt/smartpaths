@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   attr_accessor :password #<---- why is this here if in the schema, there's no password?
   before_save :encrypt_password
   
+  letsrate_rater
+  
   #Relationships
   has_many :user_tags
   has_many :user_programs

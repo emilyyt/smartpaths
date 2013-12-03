@@ -20,7 +20,7 @@
 $basic-font-family: 'Lato','Helvetica Neue', Helvetica, Arial, sans-serif;
 $theme-color: green;
 $program-metrics-line-height: 2.3;
-$home-section-height: 500px;
+$home-section-height: 600px;
 
 /* Sass mixins */
 
@@ -85,17 +85,32 @@ h1 {
 
 /*Homepage Styles*/
 
+.home_info {
+	font-size: 12px;
+	padding-top: 50px;
+	color: #5f5f5b;
+	font-weight: 100;
+/*	float: right;
+	padding-right: 50px;*/
+}
 
 .main_background {
-	background-color: #E8E8E8;
+	background-color: #fffffa;
 }
-.search {
-	background-color: #E8E8E8;
+.search_background {
 	height: $home-section-height;
+	background-image: url("../../assets/home-professions.png");
+	background-repeat: no-repeat;
+	background-position: 0 -20px;
+	background-size: 100%;
 }
 .info {
-	background-color: gray;
+	background-color: #f4f4f3;
 	height: $home-section-height;
+}
+#search_field_position {
+	margin-bottom: 0;
+	width: 300px;
 }
 
 /* Header styles */
@@ -104,6 +119,7 @@ h1 {
 	background-image: none;
 	background-color: $theme-color;
 	border: none;
+	border-radius: 0px;
 }
 
 .navbar-inner {
@@ -111,8 +127,8 @@ h1 {
 	font-family: 'Pathway Gothic One';
 	font-size: 25px;
 	letter-spacing: 1px;
-	text-transform: uppercase
-}
+	text-transform: uppercase;
+	}
 }
 
 .navbar-inner .brand, .navbar #navbar_links li a {
@@ -122,8 +138,15 @@ h1 {
 /* Main content styles */
 
 .home_heading{
-	margin-top: 20%;
+	margin-top: 18%;
 	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	height: 25%;
+	width: 450px;
+	padding: 20px;
+	background-color: rgba(255,255,255,0.7);
+	@include rounded-corners(8px);
 }
 
 .home_heading h1 {
@@ -150,10 +173,10 @@ h1 {
 .program_metrics{
 	display: inline-block;
 	margin-top: 30px;
-	padding: 15px 25px 15px 0;
+	padding: 15px 100px 15px 0;
 	@include rounded-corners(7px);
 	border: 1px solid #DBDBDB;
-	width: 60%;
+	width: 55%;
 	font-weight: bold;
 	color: #535353;
 	li {
@@ -163,8 +186,6 @@ h1 {
 		line-height: $program-metrics-line-height * 0.8;
 	}
 }
-
-
 
 .program_general_stats {
 	float: left;

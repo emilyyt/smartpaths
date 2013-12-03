@@ -1,8 +1,10 @@
 <div class="home_heading">
 	<h1>Smart<span> Paths</span></h1>
+	<div class="heading_box">
+    </div>
 	<br></br>
 		<%= form_tag("/search", :method => "get") do %>
-    	  <%= text_field_tag('query', nil, :placeholder => "type in one or more tags...")%>
-    	  <%= submit_tag('Submit')%>
+    	  <%= text_field_tag('query', nil, :placeholder => "type in one or more tags...", :id => 'search_field_position')%>
+    	  <%= submit_tag 'Submit', :class => 'btn btn-info'%>
     <% end %>
 </div>

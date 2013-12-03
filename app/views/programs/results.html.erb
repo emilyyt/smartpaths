@@ -1,15 +1,17 @@
 
-<h1> Search Results </h1>
+<h1> Search Result </h1>
 <table class="table">
-	<tr>
-    <th>Program Name</th>
-
-    </tr>
-
+<tr>
+	<th>
+		Program Name
+	</th>
+</tr>
 	<% @programs.each do |program| %>
 	<tr>
-		<td><%= program %></td>
-
+	<td>
+		<%= program %>
+	</td>
 	</tr>
 	<% end %>
+</ul>
 </table>
