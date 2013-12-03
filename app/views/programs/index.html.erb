@@ -22,4 +22,6 @@
 
 <br />
 
-<%= link_to 'New Program', new_program_path %>
+<% if can? :create, Program %>
+	<%= link_to 'New Program', new_program_path %>
+<% end %>

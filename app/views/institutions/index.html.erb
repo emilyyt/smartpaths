@@ -26,4 +26,6 @@
 
 <br />
 
-<%= link_to 'New Institution', new_institution_path %>
+<% if can? :create, Institution %>
+	<%= link_to 'New Institution', new_institution_path %>
+<% end %>
