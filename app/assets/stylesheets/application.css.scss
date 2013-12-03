@@ -85,6 +85,15 @@ h1 {
 
 /*Homepage Styles*/
 
+.home_info {
+	font-size: 12px;
+	padding-top: 50px;
+	color: #5f5f5b;
+	font-weight: 100;
+/*	float: right;
+	padding-right: 50px;*/
+}
+
 .main_background {
 	background-color: #fffffa;
 }
@@ -96,7 +105,7 @@ h1 {
 	background-size: 100%;
 }
 .info {
-	background-color: gray;
+	background-color: #f4f4f3;
 	height: $home-section-height;
 }
 #search_field_position {
@@ -164,10 +173,10 @@ h1 {
 .program_metrics{
 	display: inline-block;
 	margin-top: 30px;
-	padding: 15px 25px 15px 0;
+	padding: 15px 100px 15px 0;
 	@include rounded-corners(7px);
 	border: 1px solid #DBDBDB;
-	width: 60%;
+	width: 55%;
 	font-weight: bold;
 	color: #535353;
 	li {
