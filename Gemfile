@@ -15,6 +15,7 @@ gem 'coderay'
 gem 'activerecord-reputation-system', require: 'reputation_system'
 gem 'font-awesome-rails'
 gem 'pg'
+gem 'letsrate'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

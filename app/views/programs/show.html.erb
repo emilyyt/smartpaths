@@ -32,11 +32,26 @@
 		<li>Student : Faculty Ratio  <div>10 : 1</div></li>
 	</ul>
 	<ul class="program_rating_stats">
-		<li><span id="overall_rating">Overall Rating</span><div class="star_rating_yellow"></div></li>
+		<li><span id="overall_rating">Overall Rating</span>
+			<div class="star_rating_yellow">
+				<%= rating_for @program, "overall_value" %>
+			</div>
+		</li>
 		<li>Personal Value
-		  <div class="star_rating_red"></div></li>
-		<li>Academics <div class="star_rating_blue"></div> </li>
-		<li>Jobs &amp; Internships <div class="star_rating_green"></div></li>
+		  <div class="star_rating_red">
+		  	<%= rating_for @program, "personal_value" %>
+		  </div>
+		</li>
+		<li>Academics 
+			<div class="star_rating_blue">
+				<%= rating_for @program, "academics" %>
+			</div> 
+		</li>
+		<li>Jobs &amp; Internships 
+			<div class="star_rating_green">
+				<%= rating_for @program, "jobs" %>
+			</div>
+		</li>
 	</ul>
 </div>
 

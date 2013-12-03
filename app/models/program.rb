@@ -12,7 +12,7 @@ class Program < ActiveRecord::Base
   validates_numericality_of :graduating_salary, :only_integer => true, :greater_than_or_equal_to => 0
   
   scope :for_institution, lambda {|institution| where("institution_id = ?", "#{institution.id}") }
-
+  letsrate_rateable "personal_value", "academics", "jobs", "overall_value"
 
   def name_with_institution
 	"#{name} @ #{Institution.find(institution_id).name}"
