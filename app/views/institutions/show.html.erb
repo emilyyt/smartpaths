@@ -7,7 +7,6 @@
   <%= @institution.address %><br />
   <%= @institution.city %>, <%= @institution.state %> <%= @institution.zip %><br />
 </p>
-<p>Learn more: "http://college.edu"</p>
 
 <h4>Programs at <%= @institution.name%>: </h4>
 <table class="table">
@@ -28,23 +27,6 @@
 		</tr>
 	<% end %>
 </table>
-
-<h3>Programs at <%= @institution.name %>: </h3>
-
-<table class="table">
-  <tr>
-    <th>Name</th>
-    <th>Graduating Salary</th>
-  </tr>
-
-<% @programs.each do |program| %>
-  <tr>
-    <td><%= link_to program.name, program %></td> 
-    <td><%= "$#{program.graduating_salary}" %></td>
-  </tr>
-<% end %>
-</table>
-
 
 <%= link_to 'Edit', edit_institution_path(@institution) %> |
 <%= link_to 'Back', institutions_path %>
