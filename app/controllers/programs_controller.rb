@@ -3,6 +3,7 @@ class ProgramsController < ApplicationController
   # GET /programs.json
 
   load_and_authorize_resource
+  skip_authorize_resource :only => :results
   
   def index
     @programs = Program.all

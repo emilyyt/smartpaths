@@ -1,7 +1,7 @@
 class TagsController < ApplicationController
   # GET /tags
   # GET /tags.json
-  before_filter :check_login, :except => [:index, :show]
+  before_filter :check_login, :except => [:show]
   
   
   def index
