@@ -8,7 +8,7 @@ namespace :db do
 
     # Need two gems to make this work: faker & populator
     # Docs at: http://populator.rubyforge.org/
-    require 'populator'
+    #require 'populator'
     # Docs at: http://faker.rubyforge.org/rdoc/
     require 'faker'
 
