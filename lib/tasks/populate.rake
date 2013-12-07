@@ -10,7 +10,7 @@ namespace :db do
     # Docs at: http://populator.rubyforge.org/
     #require 'populator'
     # Docs at: http://faker.rubyforge.org/rdoc/
-    require 'faker'
+    #require 'faker'
 
     # Step 0: clear any old data in the db
     [User, UserTag, ProgramTag, Tag, Program, Institution, Review, UserProgram].each(&:delete_all)
