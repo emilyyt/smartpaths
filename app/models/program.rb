@@ -56,7 +56,7 @@ class Program < ActiveRecord::Base
         @tagSet << tag.name.downcase
       end
       if (@queryTagSet.subset?(@tagSet))
-        @programs << program.name #returing progam name only
+        @programs << program.id #returing progam id only
       end
     end
     @programs.uniq

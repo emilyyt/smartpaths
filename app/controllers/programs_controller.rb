@@ -15,6 +15,18 @@ class ProgramsController < ApplicationController
 
   def results
     @programs = session[:results]
+    ##############################
+    @programObj = []
+    @searchEmpty = true
+    
+    @programs.each do |prog|
+      @programObj << Program.find(params[:id], prog)
+    end
+    if !@programObj.empty?
+      @searchEmpty = false
+    end
+ ###############################
+
   end
 
   # GET /programs/1
